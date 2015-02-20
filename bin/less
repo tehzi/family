@@ -1,13 +1,9 @@
 #!/bin/bash
 
 SCRIPT_PATH=$(dirname $(readlink -f $0))/../less
-echo $SCRIPT_PATH
 inotifywait -r -mrq -e close_write -e moved_to -e modify,close_write --format "%w%f" $SCRIPT_PATH | while read "file"; do
     if [[ ${file:(-5)} == ".less" ]]; then
         echo $file
-        # cssbeautify <(lessc $file) > $SCRIPT_PATH/../css/$(basename $file | perl -0777 -pE 's/less$/css/')
-        echo $SCRIPT_PATH/../../../www/css/styles.css
         cssbeautify <(lessc $SCRIPT_PATH/styles.less) > $SCRIPT_PATH/../css/styles.css
-        cssbeautify <(lessc $SCRIPT_PATH/styles.less) > $SCRIPT_PATH/../../../www/css/styles.css
     fi
 done
