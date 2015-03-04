@@ -16,7 +16,7 @@
     <meta name="author" content="Mikhail, zi>>">
     <link rel="stylesheet" href="css/styles.css">
     <!-- Мащтабируемость экрана -->
-    <!-- <meta name="viewport" content="initial-scale = 1.0,maximum-scale = 1.0" /> -->
+    <meta name="viewport" content="initial-scale = 1.0,maximum-scale = 1.0" />
     <title>Страница сайта</title>
     <!-- html5 тэги для старых браузеров -->
     <!--[if lt IE 9]>
@@ -26,8 +26,693 @@
     <script type="text/javascript" src="js/jquery.min.js"></script>
     <script type="text/javascript" src="js/jquery-ui.js"></script>
     <script type="text/javascript" src="js/bootstrap.min.js"></script>
+    <script type="text/javascript" src="js/additions.min.js"></script>
+    <script type="text/javascript" src="js/underscore-min.js"></script>
+    <script type="text/javascript" src="js/backbone-min.js"></script>
+    <script type="text/javascript" src="js/main.js"></script>
 </head>
 <body>
-
+    <div class="main-wrapper">
+        <header>
+            <nav class="header-box">
+                <ul class="register-box right">
+                    <li>
+                        <a href="javascript:void(0);" class="has_submenu dropdown-toggle" role="button" data-hover="dropdown" data-delay="1000">Вход</a>
+                        <div class="dropdown-menu top_triangle_right login_box" role="menu">
+                            <div class="line">
+                                <div class="right oauth-box">
+                                    <a href="javascript:void(0);" class="fa fa-vk"></a>
+                                    <a href="javascript:void(0);" class="fa fa-facebook-square"></a>
+                                    <a href="javascript:void(0);" class="fa fa-twitter-square"></a>
+                                </div>
+                                <span class="c626262 b">Авторизация</span>
+                            </div>
+                            <form action="/login" method="post">
+                                <div class="line">
+                                    <div class="input-wrapper">
+                                        <input type="text" name="login" data-placeholder="Логин">
+                                    </div>
+                                </div>
+                                <div class="line">
+                                    <div class="input-wrapper">
+                                        <input type="password" name="password" data-placeholder="Пароль">
+                                    </div>
+                                </div>
+                                <div class="line">
+                                    <button type="submit" class="btn btn-login">Войти</button>
+                                    &nbsp;
+                                    <a href="javascript:void(0);" class="underline-link">забыл пароль?</a>
+                                </div>
+                            </form>
+                        </div>
+                    </li>
+                    <li><a href="javascript:void(0);">Регистрация</a></li>
+                </ul>
+                <ul>
+                    <li><a href="javascript:void(0);" class="active">Главная</a></li>
+                    <li><a href="javascript:void(0);">Новости</a></li>
+                    <li class="dropdown">
+                        <a href="javascript:void(0);" class="has_submenu dropdown-toggle" data-toggle="dropdown" data-hover="dropdown" role="button" aria-expanded="false">Комиксы</a>
+                        <ul class="dropdown-menu top_triangle_left" role="menu">
+                            <li><a href="javascript:void(0);">Two Kinds</a></li>
+                            <li><a href="javascript:void(0);">Jack</a></li>
+                            <li><a href="javascript:void(0);">Lackadaisy</a></li>
+                            <li><a href="javascript:void(0);">Sequential Art</a></li>
+                            <li><a href="javascript:void(0);">Dreamkeepers</a></li>
+                        </ul>
+                    </li>
+                    <li><a href="javascript:void(0);">Форум</a></li>
+                    <li><a href="javascript:void(0);">Чат</a></li>
+                    <li><a href="javascript:void(0);">Контакты</a></li>
+                    <li><a href="javascript:void(0);">Помощь</a></li>
+                </ul>
+            </nav>
+        </header>
+        <div class="main">
+            <div class="slider carousel slide" id="carousel-comics" data-ride="carousel">
+                <div class="carousel-inner"  role="listbox">
+                    <div class="item active" data-description="Two Kinds" data-href="#1">
+                        <img src="other/slider01.jpg" alt="">
+                    </div>
+                    <div class="item" data-description="Two Kinds 1" data-href="#2">
+                        <img src="other/slider02.jpg" alt="">
+                    </div>
+                    <div class="item" data-description="Two Kinds 2 long long long" data-href="#3">
+                        <img src="other/slider03.jpg" alt="">
+                    </div>
+                    <div class="item" data-description="Two Kinds 3" data-href="#4">
+                        <img src="other/slider04.jpg" alt="">
+                    </div>
+                    <div class="item" data-description="Two Kinds 4" data-href="#5">
+                        <img src="other/slider05.jpg" alt="">
+                    </div>
+                </div>
+                <div class="carousel-controls">
+                    <ul class="in_center">
+                        <li><a href="#carousel-comics" class="fa fa-backward" data-slide="prev" role="button"></a></li>
+                        <li><a href="#carousel-comics" class="fa fa-pause" data-slide="pause" role="button"></a></li>
+                        <li><a href="#carousel-comics" class="fa fa-forward" data-slide="next" role="button"></a></li>
+                    </ul>
+                    <div class="line">
+                        обложка:
+                        <a href="javascript:void(0);">
+                            <span data-type="comics-title">Two Kinds</span>
+                            <span class="fa fa-chevron-right"></span>
+                        </a>
+                    </div>
+                </div>
+                <div class="social-toolbar">
+                    <a href="javascript:void(0);" class="fa fa-vk"></a>
+                    <a href="javascript:void(0);" class="fa fa-twitter"></a>
+                    <div href="javascript:void(0);" class="fa fa-rss">
+                        <div class="hide-clip dropdown-toggle" role="button" data-hover="dropdown" data-delay="1000">&nbsp;</div>
+                        <div class="dropdown-menu top_triangle_right" role="menu">
+                            <ul>
+                                <li><a href="javascript:void(0);">Ссылка на rss 1</a></li>
+                                <li><a href="javascript:void(0);">Ссылка на rss 2</a></li>
+                                <li><a href="javascript:void(0);">rss 1550</a></li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+                <a href="javascript:void(0);" class="logotip"></a>
+            </div>
+            <div class="main-bg clearfix">
+                <div class="breadcrumbs">
+                    <div class="right search-box">
+                        <form action="javascript:void(0);" method="post">
+                            <input type="text" name="search" data-placeholder="Поиск...">
+                            <button type="submit" class="fa fa-search"></button>
+                        </form>
+                    </div>
+                    <ul>
+                        <li><a href="javascript:void(0);">главная</a></li>
+                        <li><span>какая-то не ссылка</span></li>
+                    </ul>
+                </div>
+                <div class="main_content-wrapper">
+                    <div class="lastupdate-wrapper">
+                        <h1>ПОСЛЕДНИЕ ОБНОВЛЕНИЯ</h1>
+                        <div class="lastupdate-slider" id="lastupdate-slider">
+                            <div class="lastupdate-inbox" data-plugin="jcarousel" data-delay="15">
+                                <ul class="in_center image-wrapper">
+                                    <li>
+                                        <a href="javascript:void(0);">
+                                            <img src="other/01.jpg" alt="">
+                                            <span class="strip-description">
+                                                <span class="right">217</span>
+                                                <h2>Dreamkeepers</h2>
+                                            </span>
+                                        </a>
+                                        <svg version="1.1"
+                                             xmlns="http://www.w3.org/2000/svg"
+                                             xmlns:xlink="http://www.w3.org/1999/xlink"
+                                             width="270"
+                                             height="25">
+                                            <defs>
+                                                <linearGradient id="g0" x1="0" y1="0" x2="0" y2="100%">
+                                                    <stop offset="85.51%"
+                                                          stop-color="#000000"
+                                                          stop-opacity="0" />
+                                                    <stop offset="100%"
+                                                          stop-color="#ffffff"
+                                                          stop-opacity="1" />
+                                                </linearGradient>
+                                                <mask id="m0">
+                                                    <rect x="-270" y="0" width="270" height="143" fill="url(#g0)"/>
+                                                </mask>
+                                            </defs>
+                                            <image x="-270"
+                                                   y="0"
+                                                   width="271"
+                                                   height="143"
+                                                   transform="rotate(180 135 71) scale(-1, 1)"
+                                                   mask="url(#m0)"
+                                                   opacity="0.4"
+                                                   xlink:href="other/01.jpg" />
+                                        </svg>
+                                    </li>
+                                    <li>
+                                        <a href="javascript:void(0);">
+                                            <img src="other/02.jpg" alt="">
+                                            <span class="strip-description">
+                                                <span class="right">731</span>
+                                                <h2>Twokinds</h2>
+                                            </span>
+                                        </a>
+                                        <svg version="1.1"
+                                             xmlns="http://www.w3.org/2000/svg"
+                                             xmlns:xlink="http://www.w3.org/1999/xlink"
+                                             width="270"
+                                             height="25">
+                                            <defs>
+                                                <linearGradient id="g0" x1="0" y1="0" x2="0" y2="100%">
+                                                    <stop offset="85.51%"
+                                                          stop-color="#000000"
+                                                          stop-opacity="0" />
+                                                    <stop offset="100%"
+                                                          stop-color="#ffffff"
+                                                          stop-opacity="1" />
+                                                </linearGradient>
+                                                <mask id="m0">
+                                                    <rect x="-270" y="0" width="270" height="143" fill="url(#g0)"/>
+                                                </mask>
+                                            </defs>
+                                            <image x="-270"
+                                                   y="0"
+                                                   width="271"
+                                                   height="143"
+                                                   transform="rotate(180 135 71) scale(-1, 1)"
+                                                   mask="url(#m0)"
+                                                   opacity="0.4"
+                                                   xlink:href="other/02.jpg" />
+                                        </svg>
+                                    </li>
+                                    <li>
+                                        <a href="javascript:void(0);">
+                                            <img src="other/03.jpg" alt="">
+                                            <span class="strip-description">
+                                                <span class="right">419</span>
+                                                <h2>Еxterminatus Now</h2>
+                                            </span>
+                                        </a>
+                                        <svg version="1.1"
+                                             xmlns="http://www.w3.org/2000/svg"
+                                             xmlns:xlink="http://www.w3.org/1999/xlink"
+                                             width="270"
+                                             height="25">
+                                            <defs>
+                                                <linearGradient id="g0" x1="0" y1="0" x2="0" y2="100%">
+                                                    <stop offset="85.51%"
+                                                          stop-color="#000000"
+                                                          stop-opacity="0" />
+                                                    <stop offset="100%"
+                                                          stop-color="#ffffff"
+                                                          stop-opacity="1" />
+                                                </linearGradient>
+                                                <mask id="m0">
+                                                    <rect x="-270" y="0" width="270" height="143" fill="url(#g0)"/>
+                                                </mask>
+                                            </defs>
+                                            <image x="-270"
+                                                   y="0"
+                                                   width="271"
+                                                   height="143"
+                                                   transform="rotate(180 133 71) scale(-1, 1)"
+                                                   mask="url(#m0)"
+                                                   opacity="0.4"
+                                                   xlink:href="other/03.jpg" />
+                                        </svg>
+                                    </li>
+                                    <li>
+                                        <a href="javascript:void(0);">
+                                            <img src="other/01.jpg" alt="">
+                                            <span class="strip-description">
+                                                <span class="right">217</span>
+                                                <h2>Dreamkeepers</h2>
+                                            </span>
+                                        </a>
+                                        <svg version="1.1"
+                                             xmlns="http://www.w3.org/2000/svg"
+                                             xmlns:xlink="http://www.w3.org/1999/xlink"
+                                             width="270"
+                                             height="25">
+                                            <defs>
+                                                <linearGradient id="g0" x1="0" y1="0" x2="0" y2="100%">
+                                                    <stop offset="85.51%"
+                                                          stop-color="#000000"
+                                                          stop-opacity="0" />
+                                                    <stop offset="100%"
+                                                          stop-color="#ffffff"
+                                                          stop-opacity="1" />
+                                                </linearGradient>
+                                                <mask id="m0">
+                                                    <rect x="-270" y="0" width="270" height="143" fill="url(#g0)"/>
+                                                </mask>
+                                            </defs>
+                                            <image x="-270"
+                                                   y="0"
+                                                   width="271"
+                                                   height="143"
+                                                   transform="rotate(180 135 71) scale(-1, 1)"
+                                                   mask="url(#m0)"
+                                                   opacity="0.4"
+                                                   xlink:href="other/01.jpg" />
+                                        </svg>
+                                    </li>
+                                    <li>
+                                        <a href="javascript:void(0);">
+                                            <img src="other/02.jpg" alt="">
+                                            <span class="strip-description">
+                                                <span class="right">731</span>
+                                                <h2>Twokinds</h2>
+                                            </span>
+                                        </a>
+                                        <svg version="1.1"
+                                             xmlns="http://www.w3.org/2000/svg"
+                                             xmlns:xlink="http://www.w3.org/1999/xlink"
+                                             width="270"
+                                             height="25">
+                                            <defs>
+                                                <linearGradient id="g0" x1="0" y1="0" x2="0" y2="100%">
+                                                    <stop offset="85.51%"
+                                                          stop-color="#000000"
+                                                          stop-opacity="0" />
+                                                    <stop offset="100%"
+                                                          stop-color="#ffffff"
+                                                          stop-opacity="1" />
+                                                </linearGradient>
+                                                <mask id="m0">
+                                                    <rect x="-270" y="0" width="270" height="143" fill="url(#g0)"/>
+                                                </mask>
+                                            </defs>
+                                            <image x="-270"
+                                                   y="0"
+                                                   width="271"
+                                                   height="143"
+                                                   transform="rotate(180 135 71) scale(-1, 1)"
+                                                   mask="url(#m0)"
+                                                   opacity="0.4"
+                                                   xlink:href="other/02.jpg" />
+                                        </svg>
+                                    </li>
+                                    <li>
+                                        <a href="javascript:void(0);">
+                                            <img src="other/03.jpg" alt="">
+                                            <span class="strip-description">
+                                                <span class="right">419</span>
+                                                <h2>Еxterminatus Now</h2>
+                                            </span>
+                                        </a>
+                                        <svg version="1.1"
+                                             xmlns="http://www.w3.org/2000/svg"
+                                             xmlns:xlink="http://www.w3.org/1999/xlink"
+                                             width="270"
+                                             height="25">
+                                            <defs>
+                                                <linearGradient id="g0" x1="0" y1="0" x2="0" y2="100%">
+                                                    <stop offset="85.51%"
+                                                          stop-color="#000000"
+                                                          stop-opacity="0" />
+                                                    <stop offset="100%"
+                                                          stop-color="#ffffff"
+                                                          stop-opacity="1" />
+                                                </linearGradient>
+                                                <mask id="m0">
+                                                    <rect x="-270" y="0" width="270" height="143" fill="url(#g0)"/>
+                                                </mask>
+                                            </defs>
+                                            <image x="-270"
+                                                   y="0"
+                                                   width="271"
+                                                   height="143"
+                                                   transform="rotate(180 133 71) scale(-1, 1)"
+                                                   mask="url(#m0)"
+                                                   opacity="0.4"
+                                                   xlink:href="other/03.jpg" />
+                                        </svg>
+                                    </li>
+                                    <li>
+                                        <a href="javascript:void(0);">
+                                            <img src="other/01.jpg" alt="">
+                                            <span class="strip-description">
+                                                <span class="right">217</span>
+                                                <h2>Dreamkeepers</h2>
+                                            </span>
+                                        </a>
+                                        <svg version="1.1"
+                                             xmlns="http://www.w3.org/2000/svg"
+                                             xmlns:xlink="http://www.w3.org/1999/xlink"
+                                             width="270"
+                                             height="25">
+                                            <defs>
+                                                <linearGradient id="g0" x1="0" y1="0" x2="0" y2="100%">
+                                                    <stop offset="85.51%"
+                                                          stop-color="#000000"
+                                                          stop-opacity="0" />
+                                                    <stop offset="100%"
+                                                          stop-color="#ffffff"
+                                                          stop-opacity="1" />
+                                                </linearGradient>
+                                                <mask id="m0">
+                                                    <rect x="-270" y="0" width="270" height="143" fill="url(#g0)"/>
+                                                </mask>
+                                            </defs>
+                                            <image x="-270"
+                                                   y="0"
+                                                   width="271"
+                                                   height="143"
+                                                   transform="rotate(180 135 71) scale(-1, 1)"
+                                                   mask="url(#m0)"
+                                                   opacity="0.4"
+                                                   xlink:href="other/01.jpg" />
+                                        </svg>
+                                    </li>
+                                    <li>
+                                        <a href="javascript:void(0);">
+                                            <img src="other/02.jpg" alt="">
+                                            <span class="strip-description">
+                                                <span class="right">731</span>
+                                                <h2>Twokinds</h2>
+                                            </span>
+                                        </a>
+                                        <svg version="1.1"
+                                             xmlns="http://www.w3.org/2000/svg"
+                                             xmlns:xlink="http://www.w3.org/1999/xlink"
+                                             width="270"
+                                             height="25">
+                                            <defs>
+                                                <linearGradient id="g0" x1="0" y1="0" x2="0" y2="100%">
+                                                    <stop offset="85.51%"
+                                                          stop-color="#000000"
+                                                          stop-opacity="0" />
+                                                    <stop offset="100%"
+                                                          stop-color="#ffffff"
+                                                          stop-opacity="1" />
+                                                </linearGradient>
+                                                <mask id="m0">
+                                                    <rect x="-270" y="0" width="270" height="143" fill="url(#g0)"/>
+                                                </mask>
+                                            </defs>
+                                            <image x="-270"
+                                                   y="0"
+                                                   width="271"
+                                                   height="143"
+                                                   transform="rotate(180 135 71) scale(-1, 1)"
+                                                   mask="url(#m0)"
+                                                   opacity="0.4"
+                                                   xlink:href="other/02.jpg" />
+                                        </svg>
+                                    </li>
+                                    <li>
+                                        <a href="javascript:void(0);">
+                                            <img src="other/03.jpg" alt="">
+                                            <span class="strip-description">
+                                                <span class="right">419</span>
+                                                <h2>Еxterminatus Now</h2>
+                                            </span>
+                                        </a>
+                                        <svg version="1.1"
+                                             xmlns="http://www.w3.org/2000/svg"
+                                             xmlns:xlink="http://www.w3.org/1999/xlink"
+                                             width="270"
+                                             height="25">
+                                            <defs>
+                                                <linearGradient id="g0" x1="0" y1="0" x2="0" y2="100%">
+                                                    <stop offset="85.51%"
+                                                          stop-color="#000000"
+                                                          stop-opacity="0" />
+                                                    <stop offset="100%"
+                                                          stop-color="#ffffff"
+                                                          stop-opacity="1" />
+                                                </linearGradient>
+                                                <mask id="m0">
+                                                    <rect x="-270" y="0" width="270" height="143" fill="url(#g0)"/>
+                                                </mask>
+                                            </defs>
+                                            <image x="-270"
+                                                   y="0"
+                                                   width="271"
+                                                   height="143"
+                                                   transform="rotate(180 133 71) scale(-1, 1)"
+                                                   mask="url(#m0)"
+                                                   opacity="0.4"
+                                                   xlink:href="other/03.jpg" />
+                                        </svg>
+                                    </li>
+                                    <li>
+                                        <a href="javascript:void(0);">
+                                            <img src="other/01.jpg" alt="">
+                                            <span class="strip-description">
+                                                <span class="right">217</span>
+                                                <h2>Dreamkeepers</h2>
+                                            </span>
+                                        </a>
+                                        <svg version="1.1"
+                                             xmlns="http://www.w3.org/2000/svg"
+                                             xmlns:xlink="http://www.w3.org/1999/xlink"
+                                             width="270"
+                                             height="25">
+                                            <defs>
+                                                <linearGradient id="g0" x1="0" y1="0" x2="0" y2="100%">
+                                                    <stop offset="85.51%"
+                                                          stop-color="#000000"
+                                                          stop-opacity="0" />
+                                                    <stop offset="100%"
+                                                          stop-color="#ffffff"
+                                                          stop-opacity="1" />
+                                                </linearGradient>
+                                                <mask id="m0">
+                                                    <rect x="-270" y="0" width="270" height="143" fill="url(#g0)"/>
+                                                </mask>
+                                            </defs>
+                                            <image x="-270"
+                                                   y="0"
+                                                   width="271"
+                                                   height="143"
+                                                   transform="rotate(180 135 71) scale(-1, 1)"
+                                                   mask="url(#m0)"
+                                                   opacity="0.4"
+                                                   xlink:href="other/01.jpg" />
+                                        </svg>
+                                    </li>
+                                    <li>
+                                        <a href="javascript:void(0);">
+                                            <img src="other/02.jpg" alt="">
+                                            <span class="strip-description">
+                                                <span class="right">731</span>
+                                                <h2>Twokinds</h2>
+                                            </span>
+                                        </a>
+                                        <svg version="1.1"
+                                             xmlns="http://www.w3.org/2000/svg"
+                                             xmlns:xlink="http://www.w3.org/1999/xlink"
+                                             width="270"
+                                             height="25">
+                                            <defs>
+                                                <linearGradient id="g0" x1="0" y1="0" x2="0" y2="100%">
+                                                    <stop offset="85.51%"
+                                                          stop-color="#000000"
+                                                          stop-opacity="0" />
+                                                    <stop offset="100%"
+                                                          stop-color="#ffffff"
+                                                          stop-opacity="1" />
+                                                </linearGradient>
+                                                <mask id="m0">
+                                                    <rect x="-270" y="0" width="270" height="143" fill="url(#g0)"/>
+                                                </mask>
+                                            </defs>
+                                            <image x="-270"
+                                                   y="0"
+                                                   width="271"
+                                                   height="143"
+                                                   transform="rotate(180 135 71) scale(-1, 1)"
+                                                   mask="url(#m0)"
+                                                   opacity="0.4"
+                                                   xlink:href="other/02.jpg" />
+                                        </svg>
+                                    </li>
+                                    <li>
+                                        <a href="javascript:void(0);">
+                                            <img src="other/03.jpg" alt="">
+                                            <span class="strip-description">
+                                                <span class="right">419</span>
+                                                <h2>Еxterminatus Now</h2>
+                                            </span>
+                                        </a>
+                                        <svg version="1.1"
+                                             xmlns="http://www.w3.org/2000/svg"
+                                             xmlns:xlink="http://www.w3.org/1999/xlink"
+                                             width="270"
+                                             height="25">
+                                            <defs>
+                                                <linearGradient id="g0" x1="0" y1="0" x2="0" y2="100%">
+                                                    <stop offset="85.51%"
+                                                          stop-color="#000000"
+                                                          stop-opacity="0" />
+                                                    <stop offset="100%"
+                                                          stop-color="#ffffff"
+                                                          stop-opacity="1" />
+                                                </linearGradient>
+                                                <mask id="m0">
+                                                    <rect x="-270" y="0" width="270" height="143" fill="url(#g0)"/>
+                                                </mask>
+                                            </defs>
+                                            <image x="-270"
+                                                   y="0"
+                                                   width="271"
+                                                   height="143"
+                                                   transform="rotate(180 133 71) scale(-1, 1)"
+                                                   mask="url(#m0)"
+                                                   opacity="0.4"
+                                                   xlink:href="other/03.jpg" />
+                                        </svg>
+                                    </li>
+                                </ul>
+                            </div>
+                            <a href="javascript:void(0);" class="lastupdate_slider_left-controlls fa fa-chevron-left" data-control="jcarousel-prev"></a>
+                            <a href="javascript:void(0);" class="lastupdate_slider_right-controlls fa fa-chevron-right" data-control="jcarousel-next"></a>
+                        </div>
+                    </div>
+                    <div class="main_content-inbox content-background clearbox">
+                        <section class="content content_section-background clearbox">
+                            <div class="clear zero">&nbsp;</div>
+                            <section class="infobox right">
+                                <div class="infobox-wrapper">
+                                    <h4><span class="content-background">комментарии</span></h4>
+                                    <div class="infobox-item content_section-background">
+                                        <div class="infobox-title">
+                                            <a href="javascript:void(0);">ssharky</a> прокомментировал новость <a href="javascript:void(0);">lorem ipsum</a> [28.11.14]
+                                        </div>
+                                        <div class="infobox-content">
+                                            Pellentesque vestibulum tincidunt nulla, at faucibus diam auctor viverra... <a href="javascript:void(0);">>></a>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="infobox-wrapper">
+                                    <h4><span class="content-background">форум</span></h4>
+                                    <div class="infobox-item content_section-background">
+                                        <div class="infobox-title">
+                                            <a href="javascript:void(0);">ssharky</a> создал тему <a href="javascript:void(0);">lorem ipsum</a> [28.11.14]
+                                        </div>
+                                        <div class="infobox-content">
+                                            Donec vitae nunc sit amet odio aliquet pellentesque non et purus. Pellentesque vestibulum tincidunt nulla, at faucibus... <a href="javascript:void(0);">>></a>
+                                        </div>
+                                    </div>
+                                </div>
+                            </section>
+                            <div class="news-wrapper">
+                                <div class="news-item">
+                                    <div class="news-date right">
+                                        28.11.14 от <a href="javascript:void(0);">ssharky</a>
+                                    </div>
+                                    <div class="news-title">
+                                        <h2>Lorem ipsum</h2>
+                                    </div>
+                                    <div class="news-content">
+                                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec vitae nunc sit amet odio aliquet pellentesque non et purus. Pellentesque vestibulum tincidunt nulla, at faucibus diam auctor viverra. Phasellus quis massa nec purus aliquet viverra non eu eros. Pellentesque imperdiet porttitor est. Morbi sagittis luctus libero venenatis aliquam. Fusce sodales dapibus nulla, et molestie felis dignissim id. Pellentesque risus risus, ornare nec varius interdum, pharetra vel elit. Suspendisse dignissim suscipit purus ut eleifend. Vivamus pulvinar condimentum sem ac semper. Praesent viverra euismod arcu, quis volutpat nibh volutpat non. Curabitur pellentesque consectetur eleifend.
+                                        </p>
+                                    </div>
+                                    <div class="news-footer">
+                                        <div href="javascript:void(0);" class="right news-comment">
+                                            <a href="javascript:void(0);">Комментарии</a> 10
+                                        </div>
+                                        <a href="javascript:void(0);" class="news-more">Читать подробнее...</a>
+                                    </div>
+                                </div>
+                                <div class="news-item">
+                                    <div class="news-date right">
+                                        28.11.14 от <a href="javascript:void(0);">ssharky</a>
+                                    </div>
+                                    <div class="news-title">
+                                        <h2>Lorem ipsum</h2>
+                                    </div>
+                                    <div class="news-content">
+                                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec vitae nunc sit amet odio aliquet pellentesque non et purus. Pellentesque vestibulum tincidunt nulla, at faucibus diam auctor viverra. Phasellus quis massa nec purus aliquet viverra non eu eros. Pellentesque imperdiet porttitor est. Morbi sagittis luctus libero venenatis aliquam. Fusce sodales dapibus nulla, et molestie felis dignissim id. Pellentesque risus risus, ornare nec varius interdum, pharetra vel elit. Suspendisse dignissim suscipit purus ut eleifend. Vivamus pulvinar condimentum sem ac semper. Praesent viverra euismod arcu, quis volutpat nibh volutpat non. Curabitur pellentesque consectetur eleifend.
+                                        </p>
+                                    </div>
+                                    <div class="news-footer">
+                                        <div href="javascript:void(0);" class="right news-comment">
+                                            <a href="javascript:void(0);">Комментарии</a> 10
+                                        </div>
+                                        <a href="javascript:void(0);" class="news-more">Читать подробнее...</a>
+                                    </div>
+                                </div>
+                                <div class="news-item">
+                                    <div class="news-date right">
+                                        28.11.14 от <a href="javascript:void(0);">ssharky</a>
+                                    </div>
+                                    <div class="news-title">
+                                        <h2>Lorem ipsum</h2>
+                                    </div>
+                                    <div class="news-content">
+                                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec vitae nunc sit amet odio aliquet pellentesque non et purus. Pellentesque vestibulum tincidunt nulla, at faucibus diam auctor viverra. Phasellus quis massa nec purus aliquet viverra non eu eros. Pellentesque imperdiet porttitor est. Morbi sagittis luctus libero venenatis aliquam. Fusce sodales dapibus nulla, et molestie felis dignissim id. Pellentesque risus risus, ornare nec varius interdum, pharetra vel elit. Suspendisse dignissim suscipit purus ut eleifend. Vivamus pulvinar condimentum sem ac semper. Praesent viverra euismod arcu, quis volutpat nibh volutpat non. Curabitur pellentesque consectetur eleifend.
+                                        </p>
+                                    </div>
+                                    <div class="news-footer">
+                                        <div href="javascript:void(0);" class="right news-comment">
+                                            <a href="javascript:void(0);">Комментарии</a> 10
+                                        </div>
+                                        <a href="javascript:void(0);" class="news-more">Читать подробнее...</a>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="clear zero">&nbsp;</div>
+                        </section>
+                    </div>
+                </div>
+            </div>
+            <footer class="contact-box">
+                <div class="footer-item">
+                    <h3>Lorem ipsum</h3>
+                    <ul>
+                        <li><a href="javascript:void(0);">Lorem ipsum dolor</a></li>
+                        <li>sit amet consectetur</li>
+                        <li>adipiscing elit</li>
+                        <li>Donec vitae nunc</li>
+                        <li>sit amet odio aliquet</li>
+                        <li>pellentesque non et purus</li>
+                    </ul>
+                </div>
+                <div class="footer-item">
+                    <h3>Lorem ipsum</h3>
+                    <ul>
+                        <li>Lorem ipsum dolor</li>
+                        <li>sit amet consectetur</li>
+                        <li>adipiscing elit</li>
+                        <li>Donec vitae nunc</li>
+                        <li>sit amet odio aliquet</li>
+                        <li>pellentesque non et purus</li>
+                    </ul>
+                </div>
+                <div class="clear copyright">furries.ru &copy; 2009-2015</div>
+            </footer>
+        </div>
+        <footer class="addition_footer-box">
+            <span>
+                Все материалы на сайте получены из открытых источников, все права на комиксы принадлежат их законным авторам. Любое коммерческое использование недопустимо.
+            </span>
+        </footer>
+    </div>
 </body>
 </html>
