@@ -1,0 +1,19 @@
+#!/bin/bash
+
+SCRIPT_PATH=$(dirname $(readlink -f $0))/../src/coffee
+echo $SCRIPT_PATH
+
+inotifywait -r -mrq -e close_write -e moved_to -e modify,close_write --format "%w%f" $SCRIPT_PATH | while read "file"; do
+    if [[ ${file:(-7)} == ".coffee" ]]; then
+        OUTPUT_FILE=$(dirname $file)
+        OUTPUT_FILE=${OUTPUT_FILE##*/}
+        OUTPUT_PATH=${SCRIPT_PATH}/../../js
+        cat $(dirname $file)/*.coffee | tr -d '\r' | coffee --compile --stdio > $OUTPUT_PATH/src/$OUTPUT_FILE.js
+        cat $(dirname $file)/*.coffee | tr -d '\r' | coffee --compile --stdio | uglifyjs -c -m > $OUTPUT_PATH/min/$OUTPUT_FILE.min.js
+        # coffee --join $OUTPUT_PATH/$OUTPUT_FILE.js --compile $(dirname $file)/*.coffee
+        echo
+        echo "CHANGES IN " $file
+        echo "OUTPUT_PATH: " $OUTPUT_FILE.js
+        echo "OUTPUT_PATH MIN: " $OUTPUT_FILE.min.js
+    fi
+done

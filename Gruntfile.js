@@ -32,10 +32,10 @@ module.exports = function(grunt) {
       },
       additions: {
         files: {
-          'js/additions.min.js': ['js_src/bootstrap-hover-dropdown.js',
-                                  'js_src/placeholder.js',
-                                  'js_src/textWidth.js',
-                                  'js_src/jquery.jcarousel.js']
+          'js/min/additions.min.js': ['js/src/bootstrap-hover-dropdown.js',
+                                      'js/src/placeholder.js',
+                                      'js/src/textWidth.js',
+                                      'js/src/jquery.jcarousel.js']
         }
       }
     },

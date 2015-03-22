@@ -130,6 +130,7 @@ body{
 
         input {
             line-height: 32px;
+            height: 32px;
             background: #dfdfdf;
             border: 1px solid #dfdfdf;
             padding: 0 4px;
@@ -376,7 +377,7 @@ header {
         right: -14px;
         left: -14px;
         z-index: 0;
-        .opacity(.3);
+        ._opacity(30);
     }
 
     .slider {
@@ -428,7 +429,7 @@ header {
                 bottom: 0;
                 left: 0;
                 right: 0;
-                .opacity(.43);
+                ._opacity(43);
             }
         }
 
@@ -490,6 +491,20 @@ header {
         }
     }
 
+    .jcarousel {
+        & > ul {
+            white-space: nowrap;
+
+            li {
+                display: inline-block;
+            }
+        }
+
+        .carousel-inner {
+            overflow: visible;
+        }
+    }
+
     .main-bg {
         position: relative;
         background: data-uri('image/png;base64', '../images/main-background.gif') 0 0 repeat;
@@ -507,9 +522,9 @@ header {
         line-height: 33px;
         font-family: 'OpenSansItalic';
         margin: 6px 9px 16px;
-        overflow: hidden;
         border-bottom: 1px solid #212121;
         background: data-uri('image/gif;base64', '../images/breadcrumbs-background.gif') 0 0 repeat;
+        overflow: hidden;
         .box-shadow(inset -1px 1px 0 #161616, inset 0 -1px 0 #161616;);
         .border-radius(4px);
 
@@ -519,6 +534,10 @@ header {
 
         li {
             display: inline-block;
+
+            &:first-child a {
+                .border-radius(4px 0 0 4px);
+            }
         }
 
         ul a, ul span {
@@ -580,8 +599,8 @@ header {
                 content: " ";
                 position: absolute;
                 z-index: 3;
-                top: 0;
-                right: -15px;
+                top: 0px;
+                right: -15.5px;
                 width: 0;
                 height: 0;
                 border-style: solid;
@@ -598,6 +617,7 @@ header {
             position: relative;
             width: 327px;
             background: data-uri('image/gif;base64', '../images/search-background.gif') 0 0 repeat;
+            .border-radius(0 5px 5px 0);
 
             &:after {
                 content: " ";
@@ -616,6 +636,7 @@ header {
                 width: 295px;
                 background: transparent;
                 border: 0 none;
+                height: 33px;
             }
 
             button {
@@ -883,5 +904,23 @@ footer {
         font-size: 12px;
         text-align: center;
         color: #fff;
+    }
+}
+
+.lte8 {
+    .main-wrapper {
+        background-image: url('../images/rect_background.png');
+    }
+
+    .main {
+        &:before {
+            background: data-uri('image/png;base64', "../images/alpha30.png");
+        }
+    }
+
+    .carousel-controls {
+        &:before {
+            background: data-uri('image/png;base64', "../images/alpha30.png") !important;
+        }
     }
 }

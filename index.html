@@ -20,16 +20,16 @@
     <title>Страница сайта</title>
     <!-- html5 тэги для старых браузеров -->
     <!--[if lt IE 9]>
-    <script type="text/javascript" src="js/html5shiv.min.js"></script>
-    <script type="text/javascript" src="js/respond.js"></script>
+    <script type="text/javascript" src="js/min/html5shiv.min.js"></script>
+    <script type="text/javascript" src="js/min/respond.min.js"></script>
     <![endif]-->
-    <script type="text/javascript" src="js/jquery.min.js"></script>
-    <script type="text/javascript" src="js/jquery-ui.js"></script>
-    <script type="text/javascript" src="js/bootstrap.min.js"></script>
-    <script type="text/javascript" src="js/additions.min.js"></script>
-    <script type="text/javascript" src="js/underscore-min.js"></script>
-    <script type="text/javascript" src="js/backbone-min.js"></script>
-    <script type="text/javascript" src="js/main.js"></script>
+    <script type="text/javascript" src="js/min/jquery.min.js"></script>
+    <script type="text/javascript" src="js/min/bootstrap.min.js"></script>
+    <script type="text/javascript" src="js/min/additions.min.js"></script>
+    <script type="text/javascript" src="js/min/underscore.min.js"></script>
+    <script type="text/javascript" src="js/min/backbone.min.js"></script>
+    <script type="text/javascript" src="js/min/modernizr.min.js"></script>
+    <script type="text/javascript" src="js/min/main.min.js"></script>
 </head>
 <body>
     <div class="main-wrapper">
@@ -89,24 +89,24 @@
             </nav>
         </header>
         <div class="main">
-            <div class="slider carousel slide" id="carousel-comics" data-ride="carousel">
-                <div class="carousel-inner"  role="listbox">
-                    <div class="item active" data-description="Two Kinds" data-href="#1">
+            <div class="slider carousel slide" id="carousel-comics" data-ride="carousel" data-interval="5000" data-pause="false">
+                <ul class="carousel-inner"  role="listbox">
+                    <li class="item active" data-description="Two Kinds" data-href="#1">
                         <img src="other/slider01.jpg" alt="">
-                    </div>
-                    <div class="item" data-description="Two Kinds 1" data-href="#2">
+                    </li>
+                    <li class="item" data-description="Two Kinds 1" data-href="#2">
                         <img src="other/slider02.jpg" alt="">
-                    </div>
-                    <div class="item" data-description="Two Kinds 2 long long long" data-href="#3">
+                    </li>
+                    <li class="item" data-description="Two Kinds 2 long long long" data-href="#3">
                         <img src="other/slider03.jpg" alt="">
-                    </div>
-                    <div class="item" data-description="Two Kinds 3" data-href="#4">
+                    </li>
+                    <li class="item" data-description="Two Kinds 3" data-href="#4">
                         <img src="other/slider04.jpg" alt="">
-                    </div>
-                    <div class="item" data-description="Two Kinds 4" data-href="#5">
+                    </li>
+                    <li class="item" data-description="Two Kinds 4" data-href="#5">
                         <img src="other/slider05.jpg" alt="">
-                    </div>
-                </div>
+                    </li>
+                </ul>
                 <div class="carousel-controls">
                     <ul class="in_center">
                         <li><a href="#carousel-comics" class="fa fa-backward" data-slide="prev" role="button"></a></li>
@@ -164,6 +164,7 @@
                                                 <h2>Dreamkeepers</h2>
                                             </span>
                                         </a>
+                                        <!--[if !lte IE 8]><!-->
                                         <svg version="1.1"
                                              xmlns="http://www.w3.org/2000/svg"
                                              xmlns:xlink="http://www.w3.org/1999/xlink"
@@ -191,6 +192,7 @@
                                                    opacity="0.4"
                                                    xlink:href="other/01.jpg" />
                                         </svg>
+                                        <!--<![endif]-->
                                     </li>
                                     <li>
                                         <a href="javascript:void(0);">
@@ -200,6 +202,7 @@
                                                 <h2>Twokinds</h2>
                                             </span>
                                         </a>
+                                        <!--[if !lte IE 8]><!-->
                                         <svg version="1.1"
                                              xmlns="http://www.w3.org/2000/svg"
                                              xmlns:xlink="http://www.w3.org/1999/xlink"
@@ -227,6 +230,7 @@
                                                    opacity="0.4"
                                                    xlink:href="other/02.jpg" />
                                         </svg>
+                                        <!--<![endif]-->
                                     </li>
                                     <li>
                                         <a href="javascript:void(0);">
@@ -236,6 +240,7 @@
                                                 <h2>Еxterminatus Now</h2>
                                             </span>
                                         </a>
+                                        <!--[if !lte IE 8]><!-->
                                         <svg version="1.1"
                                              xmlns="http://www.w3.org/2000/svg"
                                              xmlns:xlink="http://www.w3.org/1999/xlink"
@@ -263,6 +268,7 @@
                                                    opacity="0.4"
                                                    xlink:href="other/03.jpg" />
                                         </svg>
+                                        <!--<![endif]-->
                                     </li>
                                     <li>
                                         <a href="javascript:void(0);">
@@ -272,6 +278,7 @@
                                                 <h2>Dreamkeepers</h2>
                                             </span>
                                         </a>
+                                        <!--[if !lte IE 8]><!-->
                                         <svg version="1.1"
                                              xmlns="http://www.w3.org/2000/svg"
                                              xmlns:xlink="http://www.w3.org/1999/xlink"
@@ -299,6 +306,7 @@
                                                    opacity="0.4"
                                                    xlink:href="other/01.jpg" />
                                         </svg>
+                                        <!--<![endif]-->
                                     </li>
                                     <li>
                                         <a href="javascript:void(0);">
@@ -308,6 +316,7 @@
                                                 <h2>Twokinds</h2>
                                             </span>
                                         </a>
+                                        <!--[if !lte IE 8]><!-->
                                         <svg version="1.1"
                                              xmlns="http://www.w3.org/2000/svg"
                                              xmlns:xlink="http://www.w3.org/1999/xlink"
@@ -335,6 +344,7 @@
                                                    opacity="0.4"
                                                    xlink:href="other/02.jpg" />
                                         </svg>
+                                        <!--<![endif]-->
                                     </li>
                                     <li>
                                         <a href="javascript:void(0);">
@@ -344,6 +354,7 @@
                                                 <h2>Еxterminatus Now</h2>
                                             </span>
                                         </a>
+                                        <!--[if !lte IE 8]><!-->
                                         <svg version="1.1"
                                              xmlns="http://www.w3.org/2000/svg"
                                              xmlns:xlink="http://www.w3.org/1999/xlink"
@@ -371,6 +382,7 @@
                                                    opacity="0.4"
                                                    xlink:href="other/03.jpg" />
                                         </svg>
+                                        <!--<![endif]-->
                                     </li>
                                     <li>
                                         <a href="javascript:void(0);">
@@ -380,6 +392,7 @@
                                                 <h2>Dreamkeepers</h2>
                                             </span>
                                         </a>
+                                        <!--[if !lte IE 8]><!-->
                                         <svg version="1.1"
                                              xmlns="http://www.w3.org/2000/svg"
                                              xmlns:xlink="http://www.w3.org/1999/xlink"
@@ -407,6 +420,7 @@
                                                    opacity="0.4"
                                                    xlink:href="other/01.jpg" />
                                         </svg>
+                                        <!--<![endif]-->
                                     </li>
                                     <li>
                                         <a href="javascript:void(0);">
@@ -416,6 +430,7 @@
                                                 <h2>Twokinds</h2>
                                             </span>
                                         </a>
+                                        <!--[if !lte IE 8]><!-->
                                         <svg version="1.1"
                                              xmlns="http://www.w3.org/2000/svg"
                                              xmlns:xlink="http://www.w3.org/1999/xlink"
@@ -443,6 +458,7 @@
                                                    opacity="0.4"
                                                    xlink:href="other/02.jpg" />
                                         </svg>
+                                        <!--<![endif]-->
                                     </li>
                                     <li>
                                         <a href="javascript:void(0);">
@@ -452,6 +468,7 @@
                                                 <h2>Еxterminatus Now</h2>
                                             </span>
                                         </a>
+                                        <!--[if !lte IE 8]><!-->
                                         <svg version="1.1"
                                              xmlns="http://www.w3.org/2000/svg"
                                              xmlns:xlink="http://www.w3.org/1999/xlink"
@@ -479,6 +496,7 @@
                                                    opacity="0.4"
                                                    xlink:href="other/03.jpg" />
                                         </svg>
+                                        <!--<![endif]-->
                                     </li>
                                     <li>
                                         <a href="javascript:void(0);">
@@ -488,6 +506,7 @@
                                                 <h2>Dreamkeepers</h2>
                                             </span>
                                         </a>
+                                        <!--[if !lte IE 8]><!-->
                                         <svg version="1.1"
                                              xmlns="http://www.w3.org/2000/svg"
                                              xmlns:xlink="http://www.w3.org/1999/xlink"
@@ -515,6 +534,7 @@
                                                    opacity="0.4"
                                                    xlink:href="other/01.jpg" />
                                         </svg>
+                                        <!--<![endif]-->
                                     </li>
                                     <li>
                                         <a href="javascript:void(0);">
@@ -524,6 +544,7 @@
                                                 <h2>Twokinds</h2>
                                             </span>
                                         </a>
+                                        <!--[if !lte IE 8]><!-->
                                         <svg version="1.1"
                                              xmlns="http://www.w3.org/2000/svg"
                                              xmlns:xlink="http://www.w3.org/1999/xlink"
@@ -551,6 +572,7 @@
                                                    opacity="0.4"
                                                    xlink:href="other/02.jpg" />
                                         </svg>
+                                        <!--<![endif]-->
                                     </li>
                                     <li>
                                         <a href="javascript:void(0);">
@@ -560,6 +582,7 @@
                                                 <h2>Еxterminatus Now</h2>
                                             </span>
                                         </a>
+                                        <!--[if !lte IE 8]><!-->
                                         <svg version="1.1"
                                              xmlns="http://www.w3.org/2000/svg"
                                              xmlns:xlink="http://www.w3.org/1999/xlink"
@@ -587,6 +610,7 @@
                                                    opacity="0.4"
                                                    xlink:href="other/03.jpg" />
                                         </svg>
+                                        <!--<![endif]-->
                                     </li>
                                 </ul>
                             </div>
@@ -705,7 +729,7 @@
                         <li>pellentesque non et purus</li>
                     </ul>
                 </div>
-                <div class="clear copyright">furries.ru &copy; 2009-2015</div>
+                <div class="clear copyright">furries.ru &copy; 2009 - 2015</div>
             </footer>
         </div>
         <footer class="addition_footer-box">

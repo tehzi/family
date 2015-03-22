@@ -5,11 +5,12 @@
     -khtml-border-radius: @radius;
 }
 
-.opacity(@val: 80) {
+._opacity(@val: 80) {
     filter:progid:DXImageTransform.Microsoft.Alpha(opacity=@val);
-    -moz-opacity: @val/100;
+    -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=@val)";
     -khtml-opacity: @val/100;
-    opacity: @val/100;
+      -moz-opacity: @val/100;
+           opacity: @val/100;
 }
 
 .gradient-vertical(@start: #000, @stop: #fff) {
