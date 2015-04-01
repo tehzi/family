@@ -1,6 +1,4 @@
 <!DOCTYPE html>
-<!--[if lt IE 7]>  <html lang="en" class="ie ie6 lte9 lte8 lte7"> <![endif]-->
-<!--[if IE 7]>     <html lang="en" class="ie ie7 lte9 lte8 lte7"> <![endif]-->
 <!--[if IE 8]>     <html lang="en" class="ie ie8 lte9 lte8"> <![endif]-->
 <!--[if IE 9]>     <html lang="en" class="ie ie9 lte9"> <![endif]-->
 <!--[if gt IE 9]>  <html lang="en"> <![endif]-->
@@ -19,6 +17,10 @@
     <meta name="viewport" content="initial-scale = 1.0,maximum-scale = 1.0" />
     <title>Страница сайта</title>
     <!-- html5 тэги для старых браузеров -->
+    <!--[if VML&(lt IE 9)]>
+    <xml:namespace ns="urn:schemas-microsoft-com:vml" prefix="v"/>
+    <?import namespace="v" urn="urn:schemas-microsoft-com:vml" implementation="#default#VML" declareNamespace ?>
+    <![endif]-->
     <!--[if lt IE 9]>
     <script type="text/javascript" src="js/min/html5shiv.min.js"></script>
     <script type="text/javascript" src="js/min/respond.min.js"></script>
@@ -37,8 +39,12 @@
             <nav class="header-box">
                 <ul class="register-box right">
                     <li>
-                        <a href="javascript:void(0);" class="has_submenu dropdown-toggle" role="button" data-hover="dropdown" data-delay="1000">Вход</a>
-                        <div class="dropdown-menu top_triangle_right login_box" role="menu">
+                        <a href="javascript:void(0);" class="has_submenu dropdown-toggle vml-hover vml-zindex vml-none_bg" role="button" data-hover="dropdown" data-delay="1000">
+                            <!--[if VML&(lt IE 9)]><v:vmlframe src="vml_templates.vml#vml-menu_current" class="vml-hover-unvisible"/><![endif]-->
+                            Вход
+                        </a>
+                        <div class="dropdown-menu top_triangle_right login_box vml-none_bg vml-zindex" role="menu">
+                            <!--[if VML&(lt IE 9)]><v:vmlframe src="vml_templates.vml#vml-menu" /><![endif]-->
                             <div class="line">
                                 <div class="right oauth-box">
                                     <a href="javascript:void(0);" class="fa fa-vk"></a>
@@ -59,21 +65,44 @@
                                     </div>
                                 </div>
                                 <div class="line">
-                                    <button type="submit" class="btn btn-login">Войти</button>
+                                    <button type="submit" class="btn btn-login vml-none_bg vml-hover">
+                                        <!--[if VML&(lt IE 9)]><v:vmlframe src="vml_templates.vml#vml-login_btn" class="vml-hover"/><![endif]-->
+                                        <!--[if VML&(lt IE 9)]><v:vmlframe src="vml_templates.vml#vml-login_btn-hover" class="vml-hover-unvisible" /><![endif]-->
+                                        Войти
+                                    </button>
                                     &nbsp;
                                     <a href="javascript:void(0);" class="underline-link">забыл пароль?</a>
                                 </div>
                             </form>
                         </div>
                     </li>
-                    <li><a href="javascript:void(0);">Регистрация</a></li>
+                    <li>
+                        <a href="javascript:void(0);" class="vml-hover vml-zindex vml-none_bg">
+                            <!--[if VML&(lt IE 9)]><v:vmlframe src="vml_templates.vml#vml-menu_current" class="vml-hover-unvisible"/><![endif]-->
+                            Регистрация
+                        </a>
+                    </li>
                 </ul>
                 <ul>
-                    <li><a href="javascript:void(0);" class="active">Главная</a></li>
-                    <li><a href="javascript:void(0);">Новости</a></li>
+                    <li>
+                        <a href="javascript:void(0);" class="active vml-hover vml-zindex vml-none_bg">
+                            <!--[if VML&(lt IE 9)]><v:vmlframe src="vml_templates.vml#vml-menu_current vml-hover-unvisible" /><![endif]-->
+                            Главная
+                        </a>
+                    </li>
+                    <li>
+                        <a href="javascript:void(0);" class="vml-hover vml-zindex vml-none_bg">
+                            <!--[if VML&(lt IE 9)]><v:vmlframe src="vml_templates.vml#vml-menu_current" class="vml-hover-unvisible"/><![endif]-->
+                            Новости
+                        </a>
+                    </li>
                     <li class="dropdown">
-                        <a href="javascript:void(0);" class="has_submenu dropdown-toggle" data-toggle="dropdown" data-hover="dropdown" role="button" aria-expanded="false">Комиксы</a>
-                        <ul class="dropdown-menu top_triangle_left" role="menu">
+                        <a href="javascript:void(0);" class="has_submenu dropdown-toggle vml-hover vml-zindex vml-none_bg" data-toggle="dropdown" data-hover="dropdown" role="button" aria-expanded="false">
+                            <!--[if VML&(lt IE 9)]><v:vmlframe src="vml_templates.vml#vml-menu_current" class="vml-hover-unvisible" /><![endif]-->
+                            Комиксы
+                        </a>
+                        <ul class="dropdown-menu top_triangle_left vml-none_bg vml-zindex" role="menu">
+                            <!--[if VML&(lt IE 9)]><v:vmlframe src="vml_templates.vml#vml-menu" /><![endif]-->
                             <li><a href="javascript:void(0);">Two Kinds</a></li>
                             <li><a href="javascript:void(0);">Jack</a></li>
                             <li><a href="javascript:void(0);">Lackadaisy</a></li>
@@ -81,10 +110,30 @@
                             <li><a href="javascript:void(0);">Dreamkeepers</a></li>
                         </ul>
                     </li>
-                    <li><a href="javascript:void(0);">Форум</a></li>
-                    <li><a href="javascript:void(0);">Чат</a></li>
-                    <li><a href="javascript:void(0);">Контакты</a></li>
-                    <li><a href="javascript:void(0);">Помощь</a></li>
+                    <li>
+                        <a href="javascript:void(0);" class="vml-hover vml-zindex vml-none_bg">
+                            <!--[if VML&(lt IE 9)]><v:vmlframe src="vml_templates.vml#vml-menu_current" class="vml-hover-unvisible" /><![endif]-->
+                            Форум
+                        </a>
+                    </li>
+                    <li>
+                        <a href="javascript:void(0);" class="vml-hover vml-zindex vml-none_bg">
+                            <!--[if VML&(lt IE 9)]><v:vmlframe src="vml_templates.vml#vml-menu_current" class="vml-hover-unvisible" /><![endif]-->
+                            Чат
+                        </a>
+                    </li>
+                    <li>
+                        <a href="javascript:void(0);" class="vml-hover vml-zindex vml-none_bg">
+                            <!--[if VML&(lt IE 9)]><v:vmlframe src="vml_templates.vml#vml-menu_current" class="vml-hover-unvisible" /><![endif]-->
+                            Контакты
+                        </a>
+                    </li>
+                    <li>
+                        <a href="javascript:void(0);" class="vml-hover vml-zindex vml-none_bg">
+                            <!--[if VML&(lt IE 9)]><v:vmlframe src="vml_templates.vml#vml-menu_current" class="vml-hover-unvisible" /><![endif]-->
+                            Помощь
+                        </a>
+                    </li>
                 </ul>
             </nav>
         </header>
@@ -122,11 +171,20 @@
                     </div>
                 </div>
                 <div class="social-toolbar">
-                    <a href="javascript:void(0);" class="fa fa-vk"></a>
-                    <a href="javascript:void(0);" class="fa fa-twitter"></a>
-                    <div href="javascript:void(0);" class="fa fa-rss">
+                    <a href="javascript:void(0);" class="fa fa-vk vml-hover vml-none_bg vml-zindex">
+                        <!--[if VML&(lt IE 9)]><v:vmlframe src="vml_templates.vml#vml-fa-vk" class="vml-hover"/><![endif]-->
+                        <!--[if VML&(lt IE 9)]><v:vmlframe src="vml_templates.vml#vml-fa-vk-hover" class="vml-hover-unvisible" /><![endif]-->
+                    </a>
+                    <a href="javascript:void(0);" class="fa fa-twitter vml-hover vml-none_bg vml-zindex">
+                        <!--[if VML&(lt IE 9)]><v:vmlframe src="vml_templates.vml#vml-fa-twitter" class="vml-hover"/><![endif]-->
+                        <!--[if VML&(lt IE 9)]><v:vmlframe src="vml_templates.vml#vml-fa-twitter-hover" class="vml-hover-unvisible" /><![endif]-->
+                    </a>
+                    <div href="javascript:void(0);" class="fa fa-rss vml-hover vml-none_bg vml-zindex">
+                        <!--[if VML&(lt IE 9)]><v:vmlframe src="vml_templates.vml#vml-fa-rss" class="vml-hover"/><![endif]-->
+                        <!--[if VML&(lt IE 9)]><v:vmlframe src="vml_templates.vml#vml-fa-rss-hover" class="vml-hover-unvisible" /><![endif]-->
                         <div class="hide-clip dropdown-toggle" role="button" data-hover="dropdown" data-delay="1000">&nbsp;</div>
-                        <div class="dropdown-menu top_triangle_right" role="menu">
+                        <div class="dropdown-menu top_triangle_right vml-none_bg vml-zindex" role="menu">
+                            <!--[if VML&(lt IE 9)]><v:vmlframe src="vml_templates.vml#vml-menu" /><![endif]-->
                             <ul>
                                 <li><a href="javascript:void(0);">Ссылка на rss 1</a></li>
                                 <li><a href="javascript:void(0);">Ссылка на rss 2</a></li>
@@ -139,14 +197,20 @@
             </div>
             <div class="main-bg clearfix">
                 <div class="breadcrumbs">
-                    <div class="right search-box">
+                    <div class="right search-box vml-none_bg vml-zindex">
+                        <!--[if VML&(lt IE 9)]><v:vmlframe src="vml_templates.vml#vml-search_box" /><![endif]-->
                         <form action="javascript:void(0);" method="post">
                             <input type="text" name="search" data-placeholder="Поиск...">
                             <button type="submit" class="fa fa-search"></button>
                         </form>
                     </div>
                     <ul>
-                        <li><a href="javascript:void(0);">главная</a></li>
+                        <li>
+                            <a href="javascript:void(0);" class="vml-none_bg vml-zindex">
+                                <!--[if VML&(lt IE 9)]><v:vmlframe src="vml_templates.vml#vml-breadcrumbs_first" /><![endif]-->
+                                главная
+                            </a>
+                        </li>
                         <li><span>какая-то не ссылка</span></li>
                     </ul>
                 </div>
@@ -614,8 +678,12 @@
                                     </li>
                                 </ul>
                             </div>
-                            <a href="javascript:void(0);" class="lastupdate_slider_left-controlls fa fa-chevron-left" data-control="jcarousel-prev"></a>
-                            <a href="javascript:void(0);" class="lastupdate_slider_right-controlls fa fa-chevron-right" data-control="jcarousel-next"></a>
+                            <a href="javascript:void(0);" class="lastupdate_slider-controlls lastupdate_slider_left-controlls fa fa-chevron-left vml-zindex vml-none_bg" data-control="jcarousel-prev">
+                                <!--[if VML&(lt IE 9)]><v:vmlframe src="vml_templates.vml#vml-lastupdate_slider_left" /><![endif]-->
+                            </a>
+                            <a href="javascript:void(0);" class="lastupdate_slider-controlls lastupdate_slider_right-controlls fa fa-chevron-right vml-zindex vml-none_bg" data-control="jcarousel-next">
+                                <!--[if VML&(lt IE 9)]><v:vmlframe src="vml_templates.vml#vml-lastupdate_slider_right" /><![endif]-->
+                            </a>
                         </div>
                     </div>
                     <div class="main_content-inbox content-background clearbox">
@@ -624,23 +692,25 @@
                             <section class="infobox right">
                                 <div class="infobox-wrapper">
                                     <h4><span class="content-background">комментарии</span></h4>
-                                    <div class="infobox-item content_section-background">
+                                    <div class="infobox-item content_section-background vml-none_bg vml-zindex">
+                                        <!--[if VML&(lt IE 9)]><v:vmlframe src="vml_templates.vml#vml-news_bg" /><![endif]-->
                                         <div class="infobox-title">
                                             <a href="javascript:void(0);">ssharky</a> прокомментировал новость <a href="javascript:void(0);">lorem ipsum</a> [28.11.14]
                                         </div>
                                         <div class="infobox-content">
-                                            Pellentesque vestibulum tincidunt nulla, at faucibus diam auctor viverra... <a href="javascript:void(0);">>></a>
+                                            Pellentesque vestibulum tincidunt nulla, at faucibus diam auctor viverra... <a href="javascript:void(0);">&gt;&gt;</a>
                                         </div>
                                     </div>
                                 </div>
                                 <div class="infobox-wrapper">
                                     <h4><span class="content-background">форум</span></h4>
-                                    <div class="infobox-item content_section-background">
+                                    <div class="infobox-item content_section-background vml-none_bg vml-zindex">
+                                        <!--[if VML&(lt IE 9)]><v:vmlframe src="vml_templates.vml#vml-news_bg" /><![endif]-->
                                         <div class="infobox-title">
                                             <a href="javascript:void(0);">ssharky</a> создал тему <a href="javascript:void(0);">lorem ipsum</a> [28.11.14]
                                         </div>
                                         <div class="infobox-content">
-                                            Donec vitae nunc sit amet odio aliquet pellentesque non et purus. Pellentesque vestibulum tincidunt nulla, at faucibus... <a href="javascript:void(0);">>></a>
+                                            Donec vitae nunc sit amet odio aliquet pellentesque non et purus. Pellentesque vestibulum tincidunt nulla, at faucibus... <a href="javascript:void(0);">&gt;&gt;</a>
                                         </div>
                                     </div>
                                 </div>
@@ -707,6 +777,7 @@
                 </div>
             </div>
             <footer class="contact-box">
+                <!--[if VML&(lt IE 9)]><div class="ie-shdow_box"></div><![endif]-->
                 <div class="footer-item">
                     <h3>Lorem ipsum</h3>
                     <ul>

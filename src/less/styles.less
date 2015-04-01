@@ -285,6 +285,10 @@ body{
     }
 }
 
+.hightlight {
+    outline: 1px solid  #f000f0;
+}
+
 header {
     position: relative;
     background: data-uri('image/gif;base64', '../images/background_interference.gif') repeat;
@@ -551,7 +555,7 @@ header {
             padding-left: 34px;
             background: #0e0e0e;
 
-            &:after {
+            &:before {
                 content: " ";
                 position: absolute;
                 z-index: 2;
@@ -564,7 +568,7 @@ header {
                 border-color: transparent transparent transparent #02393d;
             }
 
-            &:before {
+            &:after {
                 content: " ";
                 position: absolute;
                 z-index: 3;
@@ -582,7 +586,7 @@ header {
             background: #000;
             color: #fff;
 
-            &:after {
+            &:before {
                 content: " ";
                 position: absolute;
                 z-index: 2;
@@ -595,7 +599,7 @@ header {
                 border-color: transparent transparent transparent #02393d;
             }
 
-            &:before {
+            &:after {
                 content: " ";
                 position: absolute;
                 z-index: 3;
@@ -920,7 +924,191 @@ footer {
 
     .carousel-controls {
         &:before {
-            background: data-uri('image/png;base64', "../images/alpha30.png") !important;
+            background: data-uri('image/png;base64', "../images/alpha60.png") !important;
+        }
+    }
+
+    .strip-description {
+        &:before {
+            background: data-uri('image/png;base64', "../images/alpha60.png") !important;
+        }
+    }
+
+    .breadcrumbs {
+        & > ul li:first-child {
+            a {
+                z-index: 10;
+            }
+        }
+
+        & > ul li:first-child + * {
+            a {
+                z-index: 9;
+            }
+        }
+
+        & > ul li:first-child + * + * {
+            a {
+                z-index: 8;
+            }
+        }
+
+        & > ul li:first-child + * + * + * {
+            a {
+                z-index: 7;
+            }
+        }
+
+        & > ul li:first-child + * + * + * + * {
+            a {
+                z-index: 6;
+            }
+        }
+
+        & > ul li:first-child + * + * + * + * + * {
+            a {
+                z-index: 5;
+            }
+        }
+
+        & > ul li:first-child + * + * + * + * + * + * {
+            a {
+                z-index: 4;
+            }
+        }
+
+        & > ul li:first-child + * + * + * + * + * + * + * {
+            a {
+                z-index: 3;
+            }
+        }
+
+        & > ul li:first-child + * + * + * + * + * + * + * + * {
+            a {
+                z-index: 2;
+            }
+        }
+    }
+
+    v\: * {
+        behavior:url(#default#VML);
+    }
+
+    v\:vmlframe {
+        position: absolute;
+        display: block;
+        left: 0px;
+        top: 0px;
+        width: 100%;
+        height: 100%;
+    }
+
+    .vml-hover {
+        .vml-hover {
+            display: block;
+        }
+
+        .vml-hover-unvisible {
+            display: none;
+        }
+
+        &:hover, &.active {
+            .vml-hover {
+                display: none;
+            }
+
+            .vml-hover-unvisible {
+                display: block;
+            }
+        }
+    }
+
+    .vml-zindex {
+        & v\:vmlframe {
+            position: absolute;
+            z-index: -1;
+        }
+    }
+
+    .vml-none_bg {
+        background: none !important;
+    }
+
+    .dropdown-menu  {
+        border: 0 none !important;
+
+        & v\:vmlframe {
+            top: -1px;
+            position: absolute;
+        }
+
+        li {
+            margin-right: 1px;
+            margin-left: 1px;
+        }
+    }
+
+    .btn-login {
+        position: relative;
+        border: 0 none;
+    }
+
+    .social-toolbar {
+        .fa {
+            position: relative;
+            z-index: 1;
+        }
+    }
+
+    .breadcrumbs {
+        overflow: visible;
+        margin-left: 20px;
+        margin-right: 10px;
+
+        & > ul li:first-child {
+            margin-left: -4px;
+        }
+
+        .search-box {
+            z-index: 1;
+            margin-right: -4px;
+            height: 32px;
+        }
+    }
+
+    .lastupdate_slider-controlls {
+        z-index: 1;
+        v\:vmlframe {
+            cursor: pointer !important;
+        }
+
+        &.lastupdate_slider_left-controlls {
+            margin-left: -1px;
+        }
+
+        &.lastupdate_slider_right-controlls {
+            margin-right: -1px;
+        }
+    }
+
+    .infobox-item {
+        position: relative;
+        z-index: 1;
+    }
+
+    footer.contact-box {
+        position: relative;
+        z-index: 1;
+
+        .ie-shdow_box {
+            z-index: -1;
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 25px;
+            // background: #000;
+            filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#a6000000', endColorstr='#00000000',GradientType=0);
         }
     }
 }
