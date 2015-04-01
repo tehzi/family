@@ -151,6 +151,11 @@
              fillcolor="#000000"
              type="#corners"
              style="width: 100%; height: 100%;" />
+    <v:shape id="vml-breadcrumbs_first_not_link"
+             adj="4, 0, 0, 4"
+             fillcolor="#0e0e0e"
+             type="#corners"
+             style="width: 100%; height: 100%;" />
     <v:shape id="vml-search_box"
              adj="0, 4, 4, 0"
              fillcolor="#141414"
@@ -169,6 +174,11 @@
     <v:shape id="vml-news_bg"
              adj="5, 5, 5, 5"
              fillcolor="#212121"
+             type="#corners"
+             style="width: 100%; height: 100%;" />
+    <v:shape id="vml-infobox_news_title"
+             adj="4, 4, 4, 4"
+             fillcolor="#1c1c1c"
              type="#corners"
              style="width: 100%; height: 100%;" />
 </xml>
