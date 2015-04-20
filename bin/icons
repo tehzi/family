@@ -1,0 +1,12 @@
+#!/bin/bash
+
+SCRIPT_PATH=$(dirname $(readlink -f $0))/../../psd
+CSS_PATH=$(dirname $(readlink -f $0))/../src/less
+echo $SCRIPT_PATH
+inotifywait -r -mrq -e modify,attrib,close_write,move,create,delete --format "%w%f" $SCRIPT_PATH | while read "file"; do
+    if [[ "icons.psd" == ${file:(-9)} ]]; then
+        echo "CHANGES IN " $file
+        echo "REWRITE: " $CSS_PATH/icons.less
+        bin/psd_tool.py $file > $CSS_PATH/icons.less
+    fi
+done
