@@ -25,7 +25,7 @@
       'mouseout [data-type="comics-title"]': '_comics_title'
     };
 
-    PageView.prototype.el = 'body';
+    PageView.prototype.el = 'body .main';
 
     PageView.prototype.events = function() {
       var events, key, val;
@@ -271,28 +271,34 @@
 
     _instance = null;
 
-    SiteController.prototype.csstransitions = Modernizr && Modernizr.csstransitions;
+    SiteController.prototype.csstransitions = typeof Modernizr !== 'undefined' && Modernizr.csstransitions;
 
     SiteController.prototype.view = null;
+
+    SiteController.prototype.tooltip = null;
+
+    SiteController.prototype.bookmark = null;
 
     function SiteController() {
       this.controller = __bind(this.controller, this);
       _.templateSettings = {
         evaluate: /\{\[([\s\S]+?)\]\}/g,
-        interpolate: /\{\{(.+?)\}\}/g
+        interpolate: /\{\{(.+?)\}\}/g,
+        escape: /\{\{\{([\s\S]+?)\}\}\}/g
       };
       this.controller();
     }
 
     SiteController.prototype.controller = function() {
-      return this.view = this.csstransitions ? new PageViewTransitions : new PageViewNoTransitions;
+      if (!$('body').data('no_comic_view')) {
+        return this.view = this.csstransitions ? new PageViewTransitions : new PageViewNoTransitions;
+      }
     };
 
     SiteController.getInstance = function() {
       if (_instance === null) {
-        _instance = new SiteController;
+        return _instance = new SiteController;
       }
-      return _instance;
     };
 
     return SiteController;

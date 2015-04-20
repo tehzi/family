@@ -5,7 +5,7 @@ class PageView extends Backbone.View
         'mouseenter [data-type="comics-title"]': '_comics_title'
         'mouseout [data-type="comics-title"]': '_comics_title'
 
-    el: 'body'
+    el: 'body .main'
 
     events: =>
         events = {}

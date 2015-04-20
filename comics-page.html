@@ -1,0 +1,293 @@
+<!DOCTYPE html>
+<!--[if IE 8]>     <html lang="en" class="ie ie8 lte9 lte8"> <![endif]-->
+<!--[if IE 9]>     <html lang="en" class="ie ie9 lte9"> <![endif]-->
+<!--[if gt IE 9]>  <html lang="en"> <![endif]-->
+<!--[if !IE]><!-->
+<html lang="en">
+<!--<![endif]-->
+<head>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta charset="UTF-8">
+    <meta name="robots" content="index,follow">
+    <meta name="description" content="описания сайта">
+    <meta name="keywords" content="ключевые слова сайта">
+    <meta name="author" content="Mikhail, zi>>">
+    <link rel="stylesheet" href="css/styles.css">
+    <!-- Мащтабируемость экрана -->
+    <meta name="viewport" content="initial-scale = 1.0,maximum-scale = 1.0" />
+    <title>Страница сайта</title>
+    <!-- html5 тэги для старых браузеров -->
+    <!--[if VML&(lt IE 9)]>
+    <xml:namespace ns="urn:schemas-microsoft-com:vml" prefix="v"/>
+    <?import namespace="v" urn="urn:schemas-microsoft-com:vml" implementation="#default#VML" declareNamespace ?>
+    <![endif]-->
+    <!--[if lt IE 9]>
+    <script type="text/javascript" src="js/min/html5shiv.min.js"></script>
+    <script type="text/javascript" src="js/min/respond.min.js"></script>
+    <![endif]-->
+    <script src="js/min/jquery.min.js"></script>
+    <script src="js/min/bootstrap.min.js"></script>
+    <script src="js/min/underscore.min.js"></script>
+    <script src="js/min/backbone.min.js"></script>
+    <script src="js/min/additions.min.js"></script>
+    <script src="js/min/select2.full.min.js"></script>
+    <script src="js/min/jquery.mCustomScrollbar.min.js"></script>
+    <script src="js/min/modernizr.min.js"></script>
+    <script src="js/min/main.min.js"></script>
+    <script src="js/src/comicsView.js"></script>
+    <script src="js/src/tools.js"></script>
+    <script src="js/min/comicsSelector.min.js"></script>
+    <script src="js/min/mock.min.js"></script>
+    <script>
+        new mock.ComicsMock
+    </script>
+</head>
+<body data-no_comic_view="true"
+      data-current_page="1"
+      data-last_page="12"
+      data-comic_id="123"
+      data-comic_name="Dreamkeepers: Volume 1"
+      data-base="/furries/comics-page.html"
+      data-pushstate="false"
+      data-bookmark_icon="/furries/other/dk2.jpg">
+    <div class="loading-box"></div>
+    <div class="main-wrapper">
+        <header>
+            <nav class="header-box header_hige-box header_comics-box">
+                <ul class="register-box right">
+                    <li>
+                        <a href="javascript:void(0);" class="has_submenu dropdown-toggle vml-hover vml-zindex vml-none_bg" role="button" data-hover="dropdown" data-delay="1000">
+                            <!--[if VML&(lt IE 9)]><v:vmlframe src="vml_templates.vml#vml-menu_current" class="vml-hover-unvisible"/><![endif]-->
+                            Вход
+                        </a>
+                        <div class="dropdown-menu top_triangle_right login_box vml-none_bg vml-zindex" role="menu">
+                            <!--[if VML&(lt IE 9)]><v:vmlframe src="vml_templates.vml#vml-menu" /><![endif]-->
+                            <div class="line">
+                                <div class="right oauth-box">
+                                    <a href="javascript:void(0);" class="fa fa-vk"></a>
+                                    <a href="javascript:void(0);" class="fa fa-facebook-square"></a>
+                                    <a href="javascript:void(0);" class="fa fa-twitter-square"></a>
+                                </div>
+                                <span class="c626262 b">Авторизация</span>
+                            </div>
+                            <form action="/login" method="post">
+                                <div class="line">
+                                    <div class="input-wrapper">
+                                        <input type="text" name="login" data-placeholder="Логин">
+                                    </div>
+                                </div>
+                                <div class="line">
+                                    <div class="input-wrapper">
+                                        <input type="password" name="password" data-placeholder="Пароль">
+                                    </div>
+                                </div>
+                                <div class="line">
+                                    <button type="submit" class="btn btn-login vml-none_bg vml-hover">
+                                        <!--[if VML&(lt IE 9)]><v:vmlframe src="vml_templates.vml#vml-login_btn" class="vml-hover"/><![endif]-->
+                                        <!--[if VML&(lt IE 9)]><v:vmlframe src="vml_templates.vml#vml-login_btn-hover" class="vml-hover-unvisible" /><![endif]-->
+                                        Войти
+                                    </button>
+                                    &nbsp;
+                                    <a href="javascript:void(0);" class="underline-link">забыл пароль?</a>
+                                </div>
+                            </form>
+                        </div>
+                    </li>
+                    <li>
+                        <a href="javascript:void(0);" class="vml-hover vml-zindex vml-none_bg">
+                            <!--[if VML&(lt IE 9)]><v:vmlframe src="vml_templates.vml#vml-menu_current" class="vml-hover-unvisible"/><![endif]-->
+                            Регистрация
+                        </a>
+                    </li>
+                    <li  class="dropdown">
+                        <a href="javascript:void(0);" class="has_submenu dropdown-toggle vml-hover vml-zindex vml-none_bg" data-toggle="dropdown" data-hover="dropdown" role="button" aria-expanded="false">
+                            <!--[if VML&(lt IE 9)]><v:vmlframe src="vml_templates.vml#vml-menu_current" class="vml-hover-unvisible" /><![endif]-->
+                            Помощь
+                        </a>
+                        <ul class="dropdown-menu top_triangle_left vml-none_bg vml-zindex" role="menu">
+                            <!--[if VML&(lt IE 9)]><v:vmlframe src="vml_templates.vml#vml-menu" /><![endif]-->
+                            <li><a href="javascript:void(0);">Контакты</a></li>
+                        </ul>
+                    </li>
+                </ul>
+                <div class="comic-title">
+                    <div class="comic-wrapper">
+                        <h1>Dreamkeepers: Volume 1</h1>
+                        <div class="comic-pages">
+                            <span>cтраница  <span class="comics-current_page" id="comics-current_page">1</span>  из 10</span>
+                        </div>
+                    </div>
+                    <a href="javascript:void(0);" class="rss_link fa fa-rss-square"></a>
+                </div>
+                <ul class="left">
+                    <li class="dropdown">
+                        <a href="javascript:void(0);" class="has_submenu dropdown-toggle vml-hover vml-zindex vml-none_bg" data-toggle="dropdown" data-hover="dropdown" role="button" aria-expanded="false">
+                            <!--[if VML&(lt IE 9)]><v:vmlframe src="vml_templates.vml#vml-menu_current vml-hover-unvisible" /><![endif]-->
+                            Главная
+                        </a>
+                        <ul class="dropdown-menu top_triangle_left vml-none_bg vml-zindex" role="menu">
+                            <!--[if VML&(lt IE 9)]><v:vmlframe src="vml_templates.vml#vml-menu" /><![endif]-->
+                            <li><a href="javascript:void(0);">Новости</a></li>
+                            <li><a href="javascript:void(0);">Чат</a></li>
+                        </ul>
+                    </li>
+                    <li class="dropdown">
+                        <a href="javascript:void(0);" class="has_submenu dropdown-toggle vml-hover vml-zindex vml-none_bg" data-toggle="dropdown" data-hover="dropdown" role="button" aria-expanded="false">
+                            <!--[if VML&(lt IE 9)]><v:vmlframe src="vml_templates.vml#vml-menu_current" class="vml-hover-unvisible" /><![endif]-->
+                            Комиксы
+                        </a>
+                        <ul class="dropdown-menu top_triangle_left vml-none_bg vml-zindex" role="menu">
+                            <!--[if VML&(lt IE 9)]><v:vmlframe src="vml_templates.vml#vml-menu" /><![endif]-->
+                            <li><a href="javascript:void(0);">Two Kinds</a></li>
+                            <li><a href="javascript:void(0);">Jack</a></li>
+                            <li><a href="javascript:void(0);">Lackadaisy</a></li>
+                            <li><a href="javascript:void(0);">Sequential Art</a></li>
+                            <li><a href="javascript:void(0);">Dreamkeepers</a></li>
+                        </ul>
+                    </li>
+                    <li>
+                        <a href="javascript:void(0);" class="vml-hover vml-zindex vml-none_bg">
+                            <!--[if VML&(lt IE 9)]><v:vmlframe src="vml_templates.vml#vml-menu_current" class="vml-hover-unvisible" /><![endif]-->
+                            Форум
+                        </a>
+                    </li>
+                </ul>
+            </nav>
+        </header>
+        <div class="main-comic_page">
+            <div class="comics-toolbar" id="comic-toolbar">
+                <div class="comics-selector">
+                    <button class="right go" id="go"><span>Go!</span></button>
+                    <select name="comic" data-plagin="select2" data-theme="comics" data-language="ru">
+                        <option value="1">1</option>
+                        <option value="2">2</option>
+                        <option value="3">3</option>
+                        <option value="4">4</option>
+                        <option value="5">5 - Lorem ipsum dolor sit amet, consectetur adipiscing elit</option>
+                        <option value="6">6</option>
+                        <option value="7">7</option>
+                        <option value="8">8 - some 8</option>
+                        <option value="9">9</option>
+                        <option value="10">10</option>
+                    </select>
+                </div>
+                <div class="bookmark-adder icons"></div>
+            </div>
+            <div class="comics-box">
+                <div class="comics-arrows">
+                    <a href="javascript:void(0);" class="icons comics_left-arrow comics_hide-arrow"></a>
+                    <a href="javascript:void(0);"
+                       class="icons comics_right-arrow"
+                       data-autoshow="true"
+                       data-toggle="tooltip-view"
+                       data-mark="3f00335d"
+                       data-title="Подсказка :3"
+                       title="Используйте &larr; &rarr; на вашей клавиатуре, чтобы листать комикс."></a>
+                </div>
+                <img src="other/comic/1.jpeg" alt="Dreamkeepers: Volume 1, strip 1">
+            </div>
+            <div class="comics-info">
+                <div>Автор: <a href="javascript:void(0);">Джэй Нэйлор</a></div>
+                <div>Оригинал: <a href="javascript:void(0);">http://jaynaylor.com/betterdays/</a></div>
+                <div>Переводит: <a href="javascript:void(0);" class="c0177d1">Зверь *TranslayerЪ* Внутри</a></div>
+                <div>Всего страниц: 10</div>
+            </div>
+            <div class="comment-box">
+                <div class="add_comment-box row">
+                    <form action="javascript:void(0);">
+                        <div class="col-xs-11 textarea-wrapper">
+                            <textarea name="" id="" cols="30" rows="5" data-autoscroll="true"></textarea>
+                        </div>
+                        <div class="col-xs-1 add_button-wrapper">
+                            <button type="submit" class="submit_button"><span class="icons check-icon"></span></button>
+                        </div>
+                    </form>
+                </div>
+                <ul>
+                    <li>
+                        <div class="comment-wrapper clearfix">
+                            <div class="comment-avatar">
+                                <div class="avatar-wrapper">
+                                    <img src="other/avatar1.jpg" alt="user avatar 1">
+                                </div>
+                                <span class="comment-title">
+                                    <a href="javascript:void(0);" class="comment-moderator">SsharkY</a>
+                                    <span class="comment-date">[08.09.2013, 23:12]</span>
+                                </span>
+                            </div>
+                            <div class="comment-content">
+                                <div class="comment-text">
+                                    Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean euismod viverra volutpat. Nunc commodo gravida quam quis faucibus. Ut nec pellentesque dolor. Nunc eget eros sagittis, imperdiet tellus congue, viverra tortor. Aenean vulputate neque sapien, sed euismod arcu iaculis nec.c
+                                </div>
+                                <div class="comment-actions">
+                                    <a href="javascript:void(0);">ответить</a>
+                                    <a href="javascript:void(0);">цитировать</a>
+                                </div>
+                            </div>
+                            <ul>
+                                <li>
+                                    <div class="comment-wrapper clearfix">
+                                        <div class="comment-avatar">
+                                            <div class="avatar-wrapper">
+                                                <img src="other/avatar2.jpg" alt="user avatar 2">
+                                            </div>
+                                            <span class="comment-title">
+                                                <a href="javascript:void(0);">Someguy</a>
+                                                <span class="comment-date">[08.09.2013, 23:14]</span>
+                                            </span>
+                                        </div>
+                                        <div class="comment-content">
+                                            <div class="comment-text">
+                                                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean euismod viverra volutpat. Nunc commodo gravida quam quis faucibus. Ut nec pellentesque dolor. Nunc eget eros sagittis, imperdiet tellus congue, viverra tortor. Aenean vulputate neque sapien, sed euismod arcu iaculis nec. Curabitur blandit, sem bibendum varius tristique, mauris ipsum congue metus, at aliquet urna magna nec orci. Praesent ac leo justo. Quisque imperdiet pellentesque ultricies. Maecenas scelerisque aliquet urna ac dignissim.
+                                            </div>
+                                            <div class="comment-actions">
+                                                <a href="javascript:void(0);">ответить</a>
+                                                <a href="javascript:void(0);">цитировать</a>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </li>
+                            </ul>
+                        </div>
+                    </li>
+                    <li>
+                        <div class="comment-wrapper clearfix">
+                            <div class="comment-avatar">
+                                <div class="avatar-wrapper">
+                                    <img src="other/avatar3.jpg" alt="user avatar 3">
+                                </div>
+                                <span class="comment-title">
+                                    <a href="javascript:void(0);" class="comment-admin">Zi</a>
+                                    <span class="comment-date">[08.09.2013, 23:12]</span>
+                                </span>
+                            </div>
+                            <div class="comment-content">
+                                <div class="comment-text">
+                                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean euismod viverra volutpat. Nunc commodo gravida quam quis faucibus. Ut nec pellentesque dolor. Nunc eget eros sagittis, imperdiet tellus congue, viverra tortor. Aenean vulputate neque sapien, sed euismod arcu iaculis nec. Curabitur blandit, sem bibendum varius tristique, mauris ipsum congue metus, at aliquet urna magna nec orci. Praesent ac leo justo. Quisque imperdiet pellentesque ultricies. Maecenas scelerisque aliquet urna ac dignissim.
+                                    </p>
+                                    <p>Donec ut euismod massa. Aliquam erat volutpat. Mauris viverra augue in arcu auctor feugiat. Integer elementum purus in justo dictum, ut venenatis sem pharetra. Sed sed porta tortor. Fusce ultricies sed odio et ultricies. Mauris nec nisl porttitor, congue urna quis, hendrerit augue. Etiam sem elit, fermentum eget tincidunt in, varius non metus. Aenean sit amet ipsum a justo placerat placerat.
+                                    </p>
+                                </div>
+                                <div class="comment-actions clearfix">
+                                    <a href="javascript:void(0);">ответить</a>
+                                    <a href="javascript:void(0);">цитировать</a>
+                                </div>
+                            </div>
+                        </div>
+                    </li>
+                </ul>
+            </div>
+            <footer>
+                <a href="javascript:void(0);" class="icons arrow_up-icon" data-plugin="top"></a>
+                <div class="shadow-bottom"></div>
+                <div class="clear copyright">furries.ru &copy; 2009 - 2015</div>
+            </footer>
+        </div>
+        <footer class="addition_footer-box">
+            <span>
+                Все материалы на сайте получены из открытых источников, все права на комиксы принадлежат их законным авторам. Любое коммерческое использование недопустимо.
+            </span>
+        </footer>
+    </div>
+</body>
+</html>

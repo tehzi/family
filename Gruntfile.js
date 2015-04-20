@@ -18,8 +18,8 @@ module.exports = function(grunt) {
         stripBanners: true
       },
       dist: {
-        src: ['lib/<%= pkg.name %>.js'],
-        dest: 'dist/<%= pkg.name %>.js'
+        // src: ['lib/<%= pkg.name %>.js'],
+        // dest: 'dist/<%= pkg.name %>.js'
       },
     },
     uglify: {
@@ -35,7 +35,14 @@ module.exports = function(grunt) {
           'js/min/additions.min.js': ['js/src/bootstrap-hover-dropdown.js',
                                       'js/src/placeholder.js',
                                       'js/src/textWidth.js',
-                                      'js/src/jquery.jcarousel.js']
+                                      'js/src/jquery.jcarousel.js',
+                                      'js/src/jquery.mousewheel.js',
+                                      'js/src/autosize.js',
+                                      'js/src/top.js',
+                                      'js/src/JSON.js',
+                                      'js/src/backbone.localStorage.js',
+                                      'js/src/jquery.md5.js'],
+          'js/min/select2.full.min.js': ['js/src/select2.full.js']
         }
       }
     },

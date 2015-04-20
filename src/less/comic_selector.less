@@ -1,0 +1,154 @@
+@import (less) 'jquery.mCustomScrollbar.css';
+@import (less) 'select2.css';
+
+.comics-selector {
+    width: 212px;
+    height: 30px;
+    background: #313d4b;
+    padding: 4px 12px 4px 6px;
+    .border-radius(0 0 4px 4px);
+
+    select {
+        width: 166px;
+        height: 22px;
+        font-style: 10px;
+        border: 1px solid #ccc;
+        background: #313d4b;
+    }
+
+    .go {
+        background-color: transparent;
+        border: 0 none;
+        font-size: 10px;
+        // line-height: 21px;
+        overflow: hidden;
+        width: 20px;
+        height: 18px;
+        text-align: center;
+        padding: 0 !important;
+        color: #fff;
+
+        &:hover {
+            span {
+                border-bottom: 0 none;
+            }
+        }
+
+        span {
+            border-bottom: 1px dotted  #fff;
+        }
+    }
+}
+
+.select2-container--comics {
+    position: relative;
+
+    .select2-selection__rendered {
+        background: #181f28;
+        border-width: 1px 1px 1px 1px;
+        border-color: #374353;
+        border-style: solid;
+    }
+
+    .select2-dropdown {
+        border-color: #374353;
+        border-style: solid;
+        border-width: 0 1px 1px 1px;
+        background: #181f28;
+        overflow: hidden;
+    }
+
+    .select2-results {
+        margin-top: 2px;
+        margin-bottom: 2px;
+        height: 135px;
+    }
+
+    .select2-dropdown--below {
+        .border-radius(0);
+    }
+
+    .select2-results__option--highlighted {
+        background: #00636a;
+    }
+
+    .select2-selection__arrow {
+        position: absolute;
+        right: 3px;
+        top: 2px;
+        height: 17px;
+        width: 13px;
+
+        b {
+            border-color: #fff transparent transparent;
+            border-width: 6px 3px 0;
+            border-style: solid;
+            height: 0;
+            left: 50%;
+            margin-left: -4px;
+            margin-top: -3px;
+            position: absolute;
+            top: 50%;
+            width: 0;
+        }
+    }
+
+    &.select2-container--open {
+        .select2-selection__rendered {
+            border: 0 none;
+        }
+
+        .select2-selection {
+            background: #181f28;
+            border-width: 1px 1px 0 1px;
+            border-color: #374353;
+            border-style: solid;
+        }
+
+        .select2-results__option {
+            margin: 0 5px;
+            padding: 3px;
+            font-size: 10px;
+        }
+
+        .select2-selection__arrow {
+            b {
+                border-color: transparent transparent #fff;
+                border-width: 0 3px 6px;
+            }
+        }
+    }
+
+    .select2-search {
+        font-sizw: 9px;
+        position: relative;
+
+        input {
+            background: #1b2531;
+            border: 1px solid  #131921;
+            height: 21px;
+            line-height: 21px;
+            padding: 0 23px 0 0;
+        }
+
+        .fa-search {
+            position: absolute;
+            right: 11px;
+            top: 8px;
+            color: #fff;
+        }
+    }
+}
+
+.mCSB_inside > .mCSB_container {
+    margin-right: 10px;
+}
+
+.loading-box {
+    width: 1px;
+    height: 1px;
+    overflow: hidden;
+    position: absolute;
+    top: -9999px;
+    left: -9999px;
+}

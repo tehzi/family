@@ -1,0 +1,122 @@
+.comment-box {
+    text-align: left;
+    font-size: 12px;
+    font-family: 'Trebuchet MS', 'Lucida Grande', 'Lucida Sans Unicode', 'Lucida Sans', Tahoma, sans-serif;
+    margin-bottom: 20px;
+
+    ul {
+        list-style: none;
+        clear: both;
+    }
+
+    ul ul {
+        margin-left: 30px;
+    }
+
+    .comment-avatar{
+        img {
+            width: 24px;
+            min-width: 24px;
+        }
+    }
+
+    .avatar-wrapper {
+        padding: 2px;
+        display: inline-block;
+        background: #293945;
+
+        .border-radius(2px);
+    }
+
+    .comment-content{
+        padding: 3px 2px 4px;
+    }
+
+    .comment-title{
+        padding: 0 6px;
+
+        a {
+            font-weight: bold;
+            color: #a914c9;
+
+            &:hover {
+                color: lighten(#a914c9, 10%);
+            }
+
+            &.comment-moderator {
+                color: #2b74c2;
+
+                &:hover {
+                    color: lighten(#2b74c2, 10%);
+                }
+            }
+
+            &.comment-admin {
+                color: #ff0101;
+
+                &:hover {
+                    color: lighten(#ff0101, 10%);
+                }
+            }
+        }
+    }
+
+    .comment-date {
+        font-size: 9px;
+    }
+
+    .comment-text{
+        font-size: 12px;
+    }
+
+    .comment-actions{
+        padding: 6px 0 ;
+        font-size: 11px;
+
+        a {
+            padding-right: 10px;
+        }
+    }
+
+    .add_comment-box {
+        max-width: 1000px;
+        margin: 0 0 30px;
+    }
+
+    textarea {
+        padding: 10px;
+        width: 100%;
+        resize: none;
+        min-height: 123px;
+        height: 123px;
+        border: 1px solid  #222b33;
+        background: #1d2b33;
+
+        .box-shadow(inset 0 3px 3px rgba(0,0,0, .4), inset 0 -2px 1px -2px rgba(256, 256, 256, .2););
+        .border-radius(4px);
+    }
+
+    .textarea-wrapper {
+        min-height: 123px;
+        padding-left: 0;
+        padding-right: 6px;
+    }
+
+    .add_button-wrapper {
+        padding-left: 6px;
+        padding-right: 0;
+    }
+
+    .submit_button {
+        width: 67px;
+        height: 123px;
+        border: 1px solid  #353535;
+        background: #2f2f2f;
+
+        .border-radius(4px);
+
+        &:hover {
+            background: #1d2b33;
+        }
+    }
+}
