@@ -29,7 +29,7 @@ class ComicsView extends Backbone.View
         @name = $('body').data 'comic_name'
         @id = $('body').data 'comic_id'
         @base = $('body').data 'base'
-        @pushstate = $('body').data 'pushstate'
+        @pushstate = $('body').data('pushstate') and Modernizr and Modernizr.history
         @bookmarkIcon = $('body').data 'bookmark_icon'
         @route = new ComicsRoute @
         _.extend @, args[0]
@@ -51,8 +51,8 @@ class ComicsView extends Backbone.View
             root: @base
         @showTooltip() if @$el.find('.comics-box img').get(0).complete
         $(".#{_bookmarkAddClass}").bind
-            'mouseenter': -> $(this).animate top: 0, 1000
-            'mouseleave': -> $(this).animate top: -50, 1000
+            'mouseenter': -> $(this).stop().animate top: 0, 1000
+            'mouseleave': -> $(this).stop().animate top: -50, 1000
 
     events: =>
         $(@selector).on 'go', @_selectSlide
@@ -93,6 +93,7 @@ class ComicsView extends Backbone.View
                               .show()
 
     _keyBind: (e) =>
+        console.log e.keyCode
         @_prev() if e.keyCode is 37 and @page > 1
         @_next() if e.keyCode is 39 and @page < @lastPage
         $(window).off 'keypress', @_keyBind

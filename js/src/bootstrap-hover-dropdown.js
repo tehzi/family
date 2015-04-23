@@ -28,13 +28,16 @@
         return this.each(function () {
             var $this = $(this),
                 $parent = $this.parent(),
+                $dropdown_menu = $parent.children('.dropdown-menu'),
                 defaults = {
                     delay: 0,
-                    instantlyCloseOthers: true
+                    instantlyCloseOthers: true,
+                    time: 300
                 },
                 data = {
                     delay: $(this).data('delay'),
-                    instantlyCloseOthers: $(this).data('close-others')
+                    instantlyCloseOthers: $(this).data('close-others'),
+                    time: $(this).data('time')
                 },
                 showEvent   = 'show.bs.dropdown',
                 hideEvent   = 'hide.bs.dropdown',
@@ -53,7 +56,9 @@
                 openDropdown(event);
             }, function () {
                 timeout = window.setTimeout(function () {
-                    $parent.removeClass('open');
+                    $dropdown_menu.hide('fade',
+                                        settings.time,
+                                        function(){ $parent.removeClass('open'); $dropdown_menu.removeAttr('style'); });
                     $this.trigger(hideEvent);
                 }, settings.delay);
             });
@@ -97,6 +102,7 @@
                     $allDropdowns.removeClass('open');
 
                 window.clearTimeout(timeout);
+
                 $parent.addClass('open');
                 $this.trigger(showEvent);
             }

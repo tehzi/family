@@ -1,6 +1,6 @@
 window.mock = _.extend window.mock || {}, ComicsMock: null
 
-log = (args...) -> console.log.apply console, args if window.console and window.console.log
+log = (args...) -> console.log.apply console, args if window.console and window.console.log and console.log.apply?
 
 class ComicsMock
     constructor: ->

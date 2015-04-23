@@ -107,7 +107,7 @@
       this.name = $('body').data('comic_name');
       this.id = $('body').data('comic_id');
       this.base = $('body').data('base');
-      this.pushstate = $('body').data('pushstate');
+      this.pushstate = $('body').data('pushstate') && Modernizr && Modernizr.history;
       this.bookmarkIcon = $('body').data('bookmark_icon');
       this.route = new ComicsRoute(this);
       _.extend(this, args[0]);
@@ -146,12 +146,12 @@
       }
       return $("." + _bookmarkAddClass).bind({
         'mouseenter': function() {
-          return $(this).animate({
+          return $(this).stop().animate({
             top: 0
           }, 1000);
         },
         'mouseleave': function() {
-          return $(this).animate({
+          return $(this).stop().animate({
             top: -50
           }, 1000);
         }
@@ -216,6 +216,7 @@
     };
 
     ComicsView.prototype._keyBind = function(e) {
+      console.log(e.keyCode);
       if (e.keyCode === 37 && this.page > 1) {
         this._prev();
       }

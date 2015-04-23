@@ -20,8 +20,7 @@ class TooltipView extends Backbone.View
         @el = _template title: @model.get('title'), content: @model.get('tip')
         @$el = $ @el
 
-    events: =>
-        'click .tooltip_view-close': 'close'
+    events: => 'click .tooltip_view-close': 'close'
 
     autoshow: => @model.get 'autoshow'
 
@@ -31,6 +30,7 @@ class TooltipView extends Backbone.View
         [offset, top, left] = []
         $.when  @$el.css(opacity: 0).appendTo 'body'
          .then =>
+            @_ieOldAdditionalRender() if $('html').hasClass('lte8')
             offset = @$parent.offset()
             top =  offset.top  + @$parent.height() + parseInt @$el.css 'margin-top'
             left = offset.left + parseInt @$el.css 'margin-left'
@@ -43,4 +43,7 @@ class TooltipView extends Backbone.View
 
     _close: =>
         @$el.animate opacity: 0, 300
+
+    _ieOldAdditionalRender: =>
+        @$el.prepend '<div class="triangle-up"></div>'
 

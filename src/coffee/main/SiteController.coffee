@@ -11,12 +11,19 @@ class SiteController
             evaluate :   /\{\[([\s\S]+?)\]\}/g
             interpolate: /\{\{(.+?)\}\}/g
             escape:      /\{\{\{([\s\S]+?)\}\}\}/g
-        @controller()
+        @initialize()
 
-    controller: =>
+    initialize: =>
         if !$('body').data('no_comic_view')
             @view = if @csstransitions then new PageViewTransitions
             else                            new PageViewNoTransitions
+        $('.dropdown-toggle').bind
+            'show.bs.dropdown': (e) ->
+                e.preventDefault()
+                $(this).siblings('.dropdown-menu').first().stop(yes, yes)#.slideDown()
+            'hide.bs.dropdown': (e) ->
+                e.preventDefault()
+                $(this).find('.dropdown-menu').first().stop(yes, yes)#.slideUp()
 
     @getInstance: => _instance = new SiteController if _instance is null
 

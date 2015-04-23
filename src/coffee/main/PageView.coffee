@@ -7,6 +7,8 @@ class PageView extends Backbone.View
 
     el: 'body .main'
 
+    initialize: => @parent.tooltip.show()
+
     events: =>
         events = {}
         for key, val of @

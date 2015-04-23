@@ -10,7 +10,7 @@
   log = function() {
     var args;
     args = 1 <= arguments.length ? __slice.call(arguments, 0) : [];
-    if (window.console && window.console.log) {
+    if (window.console && window.console.log && (console.log.apply != null)) {
       return console.log.apply(console, args);
     }
   };

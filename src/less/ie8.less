@@ -203,4 +203,71 @@
         background-image: url('../images/icons.png');
         background-repeat: no-repeat;
     }
+
+    .comics-info {
+        v\:vmlframe {
+            filter:progid:DXImageTransform.Microsoft.Alpha(opacity=45);
+        }
+
+        &:before {
+            background: none !important;
+        }
+
+        &:after {
+            display: none;
+        }
+
+        .comics_info-triangle {
+            position: absolute;
+            top: -9px;
+            left: 50%;
+            margin-right: -10px;
+            filter:progid:DXImageTransform.Microsoft.Alpha(opacity=45);
+
+            .triangle(up, 20px, 10px, #354651);
+        }
+    }
+
+    .tooltip-view {
+        .triangle-up {
+            position: absolute;
+            top: -12px;
+            left: 10px;
+
+            .triangle(up, 13px, 7px, #fff);
+            filter:progid:DXImageTransform.Microsoft.Alpha(opacity=9);
+        }
+
+        &:before {
+            background: data-uri("image/png;base64", "../images/white15.png");
+        }
+
+        &:after {
+            display: none;
+        }
+    }
+
+    .comics-current_page {
+        display: block;
+        position: relative;
+
+        span {
+            display: block;
+            z-index: 1;
+        }
+    }
+
+    .comment-box {
+        .textarea-wrapper {
+            textarea {
+                min-height: 100px !important;
+                height: 100px !important;
+            }
+        }
+    }
+
+    .submit_button {
+        position: relative;
+        border: 0 none !important;
+    }
 }

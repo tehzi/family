@@ -10,6 +10,7 @@ class window.tools.BookmarksView extends Backbone.View
     bookmarks: []
     animationTime: 300
     isOpen: no
+    isShow: no
 
     constructor: (args...) ->
         _template = _.template """
@@ -38,8 +39,7 @@ class window.tools.BookmarksView extends Backbone.View
         @collection.on 'remove', @render
         $(window).scroll (e) => @$el.css 'top', parseInt($(window).scrollTop()) + _beginTop if @$el?
 
-    events: =>
-        'click .bookmark_view-count': '_displayToggle'
+    events: => 'click .bookmark_view-count': '_displayToggle'
 
     add: (icon, name, url) =>
         model = new BookmarkModel icon: icon, name: name, bookmark: url
@@ -54,16 +54,19 @@ class window.tools.BookmarksView extends Backbone.View
     find: (url) => @collection.findWhere bookmark: url if @collection?
 
     show: =>
-        if @parent?
+        if @parent? and !@isShow
             $.when @$el.css('opacity': 0).appendTo @parent.$el
              .then => _beginTop = parseInt @$el.css('top') if not _beginTop
-             .done => @$el.animate 'opacity': 1, @animationTime
+             .done =>
+                @$el.animate 'opacity': 1, @animationTime
+                @isShow = yes
 
     hide: =>
         if @parent?
             @$el.animate 'opacity': 0, @animationTime, =>
                 @close()
                 @$el.detach()
+                @isShow = no
 
     open: =>
         if @$el?

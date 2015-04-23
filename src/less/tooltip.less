@@ -1,0 +1,99 @@
+.tooltip-view {
+    position: absolute;
+    text-align: left;
+    font-size: 10px;
+    z-index: 10;
+    max-width: 240px;
+    margin-top: 12px;
+    margin-left: 25px;
+
+    &:before {
+        content: " ";
+        z-index: 1;
+        position: absolute;
+        top: -5px;
+        bottom: -5px;
+        left: -5px;
+        right: -5px;
+        background: #fff;
+
+        ._opacity(5);
+        .border-radius(5px);
+    }
+
+    &:after {
+        position: absolute;
+        top: -12px;
+        left: 10px;
+
+        .triangle(up, 13px, 7px, #fff);
+        ._opacity(5);
+    }
+
+    .tooltip_view-close{
+        position: absolute;
+        z-index: 10;
+        top: 0;
+        right: 0;
+        color: #a80605;
+        cursor: pointer;
+
+        &:hover {
+            color: lighten(#a80605, 20%)
+        }
+    }
+
+    .tooltip_view-title{
+        position: relative;
+        z-index: 2;
+        color: #7591ac;
+        padding-bottom: 5px;
+    }
+
+    .tooltip_view-content{
+        position: relative;
+        z-index: 2;
+        color: #fff;
+    }
+}
+
+.tooltip_view-error {
+    z-index: 100;
+    position: absolute;
+    left: 50%;
+    top: 200px;
+    width: 400px;
+    margin-left: -200px;
+    padding: 5px;
+
+    &:before {
+        content: " ";
+        background: #a41d18;
+        position: absolute;
+        z-index: -1;
+        top: 0;
+        left: 0;
+        bottom: 0;
+        right: 0;
+
+        .border-radius(5px);
+        ._opacity(80);
+    }
+
+    .tooltip_view_error-title {
+        text-align: center;
+        font-family: 'OpenSansBold';
+        padding-bottom: 20px;
+    }
+
+    .tooltip_view-remove {
+        position: absolute;
+        top: 3px;
+        right: 3px;
+        color: #f00;
+
+        &:hover {
+            color: lighten(#f00, 20%);
+        }
+    }
+}

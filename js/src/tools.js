@@ -31,7 +31,7 @@
       icon: null,
       name: null,
       bookmark: null,
-      date: new Date
+      date: new Date().getTime()
     };
 
     BookmarkModel.prototype.idAttribute = 'bookmark';
@@ -70,6 +70,8 @@
     BookmarksView.prototype.animationTime = 300;
 
     BookmarksView.prototype.isOpen = false;
+
+    BookmarksView.prototype.isShow = false;
 
     function BookmarksView() {
       var args;
@@ -148,7 +150,7 @@
     };
 
     BookmarksView.prototype.show = function() {
-      if (this.parent != null) {
+      if ((this.parent != null) && !this.isShow) {
         return $.when(this.$el.css({
           'opacity': 0
         }).appendTo(this.parent.$el)).then((function(_this) {
@@ -159,9 +161,10 @@
           };
         })(this)).done((function(_this) {
           return function() {
-            return _this.$el.animate({
+            _this.$el.animate({
               'opacity': 1
             }, _this.animationTime);
+            return _this.isShow = true;
           };
         })(this));
       }
@@ -174,7 +177,8 @@
         }, this.animationTime, (function(_this) {
           return function() {
             _this.close();
-            return _this.$el.detach();
+            _this.$el.detach();
+            return _this.isShow = false;
           };
         })(this));
       }
@@ -540,6 +544,7 @@
     function TooltipView() {
       var args;
       args = 1 <= arguments.length ? __slice.call(arguments, 0) : [];
+      this._ieOldAdditionalRender = __bind(this._ieOldAdditionalRender, this);
       this._close = __bind(this._close, this);
       this.close = __bind(this.close, this);
       this.render = __bind(this.render, this);
@@ -586,6 +591,9 @@
         opacity: 0
       }).appendTo('body')).then((function(_this) {
         return function() {
+          if ($('html').hasClass('lte8')) {
+            _this._ieOldAdditionalRender();
+          }
           offset = _this.$parent.offset();
           top = offset.top + _this.$parent.height() + parseInt(_this.$el.css('margin-top'));
           return left = offset.left + parseInt(_this.$el.css('margin-left'));
@@ -614,6 +622,10 @@
       return this.$el.animate({
         opacity: 0
       }, 300);
+    };
+
+    TooltipView.prototype._ieOldAdditionalRender = function() {
+      return this.$el.prepend('<div class="triangle-up"></div>');
     };
 
     return TooltipView;

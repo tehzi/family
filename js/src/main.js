@@ -13,6 +13,7 @@
       this._slideShow = __bind(this._slideShow, this);
       this._slideHide = __bind(this._slideHide, this);
       this.events = __bind(this.events, this);
+      this.initialize = __bind(this.initialize, this);
       return PageView.__super__.constructor.apply(this, arguments);
     }
 
@@ -26,6 +27,10 @@
     };
 
     PageView.prototype.el = 'body .main';
+
+    PageView.prototype.initialize = function() {
+      return this.parent.tooltip.show();
+    };
 
     PageView.prototype.events = function() {
       var events, key, val;
@@ -280,19 +285,29 @@
     SiteController.prototype.bookmark = null;
 
     function SiteController() {
-      this.controller = __bind(this.controller, this);
+      this.initialize = __bind(this.initialize, this);
       _.templateSettings = {
         evaluate: /\{\[([\s\S]+?)\]\}/g,
         interpolate: /\{\{(.+?)\}\}/g,
         escape: /\{\{\{([\s\S]+?)\}\}\}/g
       };
-      this.controller();
+      this.initialize();
     }
 
-    SiteController.prototype.controller = function() {
+    SiteController.prototype.initialize = function() {
       if (!$('body').data('no_comic_view')) {
-        return this.view = this.csstransitions ? new PageViewTransitions : new PageViewNoTransitions;
+        this.view = this.csstransitions ? new PageViewTransitions : new PageViewNoTransitions;
       }
+      return $('.dropdown-toggle').bind({
+        'show.bs.dropdown': function(e) {
+          e.preventDefault();
+          return $(this).siblings('.dropdown-menu').first().stop(true, true);
+        },
+        'hide.bs.dropdown': function(e) {
+          e.preventDefault();
+          return $(this).find('.dropdown-menu').first().stop(true, true);
+        }
+      });
     };
 
     SiteController.getInstance = function() {
