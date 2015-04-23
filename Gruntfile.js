@@ -42,7 +42,18 @@ module.exports = function(grunt) {
                                       'js/src/JSON.js',
                                       'js/src/backbone.localStorage.js',
                                       'js/src/jquery.md5.js'],
-          'js/min/select2.full.min.js': ['js/src/select2.full.js']
+          'js/min/select2.full.min.js': ['js/src/select2.full.js'],
+          'js/min/jquery-ui.min.js': ['js/src/jquery-ui/core.js',
+                                      'js/src/jquery-ui/widget.js',
+                                      'js/src/jquery-ui/mouse.js',
+                                      'js/src/jquery-ui/position.js',
+                                      'js/src/jquery-ui/draggable.js',
+                                      'js/src/jquery-ui/droppable.js',
+                                      'js/src/jquery-ui/resizable.js',
+                                      'js/src/jquery-ui/selectable.js',
+                                      'js/src/jquery-ui/sortable.js',
+                                      'js/src/jquery-ui/effect.js',
+                                      'js/src/jquery-ui/effect-fade.js']
         }
       }
     },

@@ -26,6 +26,7 @@
     <script type="text/javascript" src="js/min/respond.min.js"></script>
     <![endif]-->
     <script src="js/min/jquery.min.js"></script>
+    <script src="js/min/jquery-ui.min.js"></script>
     <script src="js/min/bootstrap.min.js"></script>
     <script src="js/min/underscore.min.js"></script>
     <script src="js/min/backbone.min.js"></script>
@@ -35,7 +36,7 @@
     <script src="js/min/modernizr.min.js"></script>
     <script src="js/min/main.min.js"></script>
     <script src="js/src/comicsView.js"></script>
-    <script src="js/src/tools.js"></script>
+    <script src="js/min/tools.min.js"></script>
     <script src="js/min/comicsSelector.min.js"></script>
     <script src="js/min/mock.min.js"></script>
     <script>
@@ -156,7 +157,8 @@
         </header>
         <div class="main-comic_page">
             <div class="comics-toolbar" id="comic-toolbar">
-                <div class="comics-selector">
+                <div class="comics-selector vml-none_bg vml-zindex">
+                    <!--[if VML&(lt IE 9)]><v:vmlframe src="vml_templates.vml#vml-comics_selector" class="vml-hover-unvisible"/><![endif]-->
                     <button class="right go" id="go"><span>Go!</span></button>
                     <select name="comic" data-plagin="select2" data-theme="comics" data-language="ru">
                         <option value="1">1</option>
@@ -186,7 +188,9 @@
                 </div>
                 <img src="other/comic/1.jpeg" alt="Dreamkeepers: Volume 1, strip 1">
             </div>
-            <div class="comics-info">
+            <div class="comics-info vml-none_bg vml-zindex">
+                <!--[if VML&(lt IE 9)]><v:vmlframe src="vml_templates.vml#vml-comics_info" /><![endif]-->
+                <!--[if VML&(lt IE 9)]><div class="comics_info-triangle"></div><![endif]-->
                 <div>Автор: <a href="javascript:void(0);">Джэй Нэйлор</a></div>
                 <div>Оригинал: <a href="javascript:void(0);">http://jaynaylor.com/betterdays/</a></div>
                 <div>Переводит: <a href="javascript:void(0);" class="c0177d1">Зверь *TranslayerЪ* Внутри</a></div>
@@ -199,7 +203,11 @@
                             <textarea name="" id="" cols="30" rows="5" data-autoscroll="true"></textarea>
                         </div>
                         <div class="col-xs-1 add_button-wrapper">
-                            <button type="submit" class="submit_button"><span class="icons check-icon"></span></button>
+                            <button type="submit" class="submit_button vml-hover vml-none_bg vml-zindex">
+                                <!--[if VML&(lt IE 9)]><v:vmlframe src="vml_templates.vml#vml-submit_button" class="vml-hover" /><![endif]-->
+                                <!--[if VML&(lt IE 9)]><v:vmlframe src="vml_templates.vml#vml-submit_button_hover" class="vml-hover-unvisible"  /><![endif]-->
+                                <span class="icons check-icon"></span>
+                            </button>
                         </div>
                     </form>
                 </div>
