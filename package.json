@@ -1,0 +1,39 @@
+{
+  "name": "furries",
+  "description": "Html templates for furries",
+  "version": "0.1.0",
+  "homepage": "https://github.com/tehzi/html",
+  "author": {
+    "name": "zi.white",
+    "email": "zi.white.drago@gmail.com"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/tehzi/html.git"
+  },
+  "bugs": {
+    "url": "https://github.com/tehzi/html/issues"
+  },
+  "licenses": [
+    {
+      "type": "MIT",
+      "url": "https://github.com/tehzi/html/blob/master/LICENSE-MIT"
+    }
+  ],
+  "main": "lib/furries",
+  "engines": {
+    "node": ">= 0.10.0"
+  },
+  "scripts": {
+    "test": "grunt nodeunit"
+  },
+  "devDependencies": {
+    "grunt": "^0.4.5",
+    "grunt-contrib-concat": "^0.5.0",
+    "grunt-contrib-jshint": "^0.11.0",
+    "grunt-contrib-nodeunit": "^0.4.1",
+    "grunt-contrib-uglify": "^0.7.0",
+    "grunt-contrib-watch": "^0.6.1"
+  },
+  "keywords": []
+}
