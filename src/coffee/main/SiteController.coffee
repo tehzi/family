@@ -15,17 +15,9 @@ class SiteController
 
     initialize: =>
         if !$('body').data('no_comic_view')
-            @view = if @csstransitions then new PageViewTransitions
-            else                            new PageViewNoTransitions
-        $('.dropdown-toggle').bind
-            'show.bs.dropdown': (e) ->
-                e.preventDefault()
-                $(this).siblings('.dropdown-menu').first().stop(yes, yes)#.slideDown()
-            'hide.bs.dropdown': (e) ->
-                e.preventDefault()
-                $(this).find('.dropdown-menu').first().stop(yes, yes)#.slideUp()
+            @view = if @csstransitions then new PageViewTransitions parent: @ else new PageViewNoTransitions parent: @
 
-    @getInstance: => _instance = new SiteController if _instance is null
+    @getSiteController: => _instance = new SiteController if _instance is null
 
-$ -> window.main = SiteController.getInstance()
+$ -> window.main = SiteController.getSiteController()
 

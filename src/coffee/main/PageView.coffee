@@ -6,8 +6,13 @@ class PageView extends Backbone.View
         'mouseout [data-type="comics-title"]': '_comics_title'
 
     el: 'body .main'
+    parent: null
 
-    initialize: => @parent.tooltip.show()
+    constructor: (args...) ->
+        _.extend @, args[0]
+        super args...
+
+    initialize: => $(window).load => @parent.tooltip.show()
 
     events: =>
         events = {}

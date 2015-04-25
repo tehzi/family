@@ -3,19 +3,11 @@
   var PageView, PageViewNoTransitions, PageViewTransitions, SiteController,
     __bind = function(fn, me){ return function(){ return fn.apply(me, arguments); }; },
     __extends = function(child, parent) { for (var key in parent) { if (__hasProp.call(parent, key)) child[key] = parent[key]; } function ctor() { this.constructor = child; } ctor.prototype = parent.prototype; child.prototype = new ctor(); child.__super__ = parent.prototype; return child; },
-    __hasProp = {}.hasOwnProperty;
+    __hasProp = {}.hasOwnProperty,
+    __slice = [].slice;
 
   PageView = (function(_super) {
     __extends(PageView, _super);
-
-    function PageView() {
-      this._comics_title = __bind(this._comics_title, this);
-      this._slideShow = __bind(this._slideShow, this);
-      this._slideHide = __bind(this._slideHide, this);
-      this.events = __bind(this.events, this);
-      this.initialize = __bind(this.initialize, this);
-      return PageView.__super__.constructor.apply(this, arguments);
-    }
 
     PageView.prototype._title_interval = 0;
 
@@ -28,8 +20,26 @@
 
     PageView.prototype.el = 'body .main';
 
+    PageView.prototype.parent = null;
+
+    function PageView() {
+      var args;
+      args = 1 <= arguments.length ? __slice.call(arguments, 0) : [];
+      this._comics_title = __bind(this._comics_title, this);
+      this._slideShow = __bind(this._slideShow, this);
+      this._slideHide = __bind(this._slideHide, this);
+      this.events = __bind(this.events, this);
+      this.initialize = __bind(this.initialize, this);
+      _.extend(this, args[0]);
+      PageView.__super__.constructor.apply(this, args);
+    }
+
     PageView.prototype.initialize = function() {
-      return this.parent.tooltip.show();
+      return $(window).load((function(_this) {
+        return function() {
+          return _this.parent.tooltip.show();
+        };
+      })(this));
     };
 
     PageView.prototype.events = function() {
@@ -296,21 +306,15 @@
 
     SiteController.prototype.initialize = function() {
       if (!$('body').data('no_comic_view')) {
-        this.view = this.csstransitions ? new PageViewTransitions : new PageViewNoTransitions;
+        return this.view = this.csstransitions ? new PageViewTransitions({
+          parent: this
+        }) : new PageViewNoTransitions({
+          parent: this
+        });
       }
-      return $('.dropdown-toggle').bind({
-        'show.bs.dropdown': function(e) {
-          e.preventDefault();
-          return $(this).siblings('.dropdown-menu').first().stop(true, true);
-        },
-        'hide.bs.dropdown': function(e) {
-          e.preventDefault();
-          return $(this).find('.dropdown-menu').first().stop(true, true);
-        }
-      });
     };
 
-    SiteController.getInstance = function() {
+    SiteController.getSiteController = function() {
       if (_instance === null) {
         return _instance = new SiteController;
       }
@@ -321,7 +325,7 @@
   })();
 
   $(function() {
-    return window.main = SiteController.getInstance();
+    return window.main = SiteController.getSiteController();
   });
 
 }).call(this);
