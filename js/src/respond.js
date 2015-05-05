@@ -1,1 +1,0 @@
-/home/zi/project/active/furries2.0/modules/respond/dest/respond.src.js

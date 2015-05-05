@@ -1,1 +1,0 @@
-/home/zi/project/active/furries2.0/modules/select2/dist/js/select2.full.js
