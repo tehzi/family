@@ -1,1 +1,3 @@
-Standart html templates.
+Большой и бесмысленный редактор семии или как не надо делать модель данных 
+
+https://tehzi.github.io/family/
